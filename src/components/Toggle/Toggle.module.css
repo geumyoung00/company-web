@@ -1,0 +1,118 @@
+.toggle {
+    width: 16rem;
+    color: #fff;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.toggle button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 11.5rem;
+    height: inherit;
+    padding: 0 1rem;
+    margin: 0 0 0 auto;
+    transition: ease .3s color;
+}
+
+.toggle .toggle-items {
+    width: 11.5rem;
+    margin-top: 1rem;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+}
+
+.toggle ul {
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    right: 0;
+    padding: .1rem 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.toggle ul li {
+    font-size: 1.6rem;
+    line-height: 1;
+    color: #333;
+    margin: 1em 0;
+}
+
+.toggle ul li:hover a {
+    color: #0064d5;
+    font-weight: 600;
+}
+
+.toggle ul li a::after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 1px;
+    background: #0064d5;
+    position: absolute;
+    left: 50%;
+    bottom: -.2rem;
+    transform: translate(-50%, 0);
+    transition: ease .2s;
+}
+
+.toggle ul li:hover a::after {
+    width: 100%;
+}
+
+.toggle button svg {
+    height: 1em;
+    fill: #fff;
+    transform: rotate(0);
+    transition: ease 0.2s all;
+}
+
+@keyframes open-animation {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.toggle.open ul {
+    animation: open-animation 0.5s ease;
+}
+
+@keyframes closed-animation {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-200%);
+    }
+}
+
+.toggle.closed ul {
+    animation: closed-animation 0.7s ease;
+    animation-fill-mode: forwards;
+}
+
+.toggle.initial ul {
+    top: -200%;
+    position: inherit;
+}
+
+.active.toggle button {
+    color: #333;
+}
+
+.active.toggle button svg {
+    fill: #333;
+}
+
+.toggle.open button svg {
+    transform: rotate(180deg);
+}
