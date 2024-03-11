@@ -9,21 +9,21 @@ import BusinessLayout from './page/roots/BusinessRoot';
 import PerformLayout from './page/roots/PerformRoot';
 import RecruitmentLayout from './page/roots/recruitRoot';
 
-import Greeting from './page/Info/Greeting/Greeting';
-import History from './page/Info/History/History';
-import Organization from './page/Info/Organization/Organization';
-import Identity from './page/Info/CompanyIdentity/CompanyIdentity';
-import Location from './page/Info/Location/Location';
-import SystemIntergation from './page/business/SI/SI';
-import Chart from './page/business/Chart/Chart';
-import Satellite from './page/business/Satellite/Satellite';
-import Media from './page/business/Media/Media';
-import ResearchDevelopment from './page/business/Rnd/Rnd';
-import MajorPerform from './page/performance/MajorPerform/MajorPerform';
-import AllPerform from './page/performance/AllPerform/AllPerform';
-import Welfare from './page/recruitment/Welfare/Welfare';
-import RecruitmentNotice from './page/recruitment/RecruitmentNotice/RecruitmentNotice';
-import RecruitmentInfo from './page/recruitment/RecruitmentInfo/RecruitmentInfo';
+import Greeting from './page/Info/Greeting';
+import History from './page/Info/History';
+import Organization from './page/Info/Organization';
+import Identity from './page/Info/CompanyIdentity';
+import Location from './page/Info/Location';
+import SystemIntergation from './page/business/SI';
+import Chart from './page/business/Chart';
+import Satellite from './page/business/Satellite';
+import Media from './page/business/Media';
+import ResearchDevelopment from './page/business/Rnd';
+import MajorPerform from './page/performance/MajorPerform';
+import AllPerform from './page/performance/AllPerform';
+import Welfare from './page/recruitment/Welfare';
+import RecruitmentNotice from './page/recruitment/RecruitmentNotice';
+import RecruitmentInfo from './page/recruitment/RecruitmentInfo';
 
 function App() {
 	const router = createBrowserRouter([

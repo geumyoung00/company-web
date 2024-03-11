@@ -60,11 +60,15 @@
     right: -1rem;
 }
 
-.nav-bar dl dd>* {
+.nav-bar dl dd>* button,
+.nav-bar dl dd>* a,
+.nav-bar dl dd>a {
     opacity: .7;
     transition: ease .2s;
 }
 
-.nav-bar dl dd>*:hover {
+.nav-bar dl dd>*:hover button,
+.nav-bar dl dd>*:hover a,
+.nav-bar dl dd>a:hover {
     opacity: 1;
 }

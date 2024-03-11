@@ -1,0 +1,47 @@
+.greeting section {
+    position: relative;
+}
+
+.greeting section .left {
+    grid-column: 1/7;
+}
+
+.greeting section .right {
+    width: calc(100% + 4rem);
+    grid-column: 8/13;
+    margin-left: -4rem;
+    background: #ddd;
+}
+
+.greeting section h3 {
+    font-size: 4rem;
+    margin-left: 8rem;
+}
+
+.greeting section strong {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #00c4ff;
+    line-height: 1.2;
+}
+
+.greeting section strong>span {
+    color: #0064d5;
+}
+
+.greeting-text {
+    margin-left: 8rem;
+}
+
+.greeting-text p {
+    font-size: 2rem;
+    font-weight: 300;
+
+}
+
+
+.greeting section hr {
+    position: relative;
+    width: 125%;
+    margin: 6rem 0;
+}

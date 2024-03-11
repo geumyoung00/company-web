@@ -1,0 +1,17 @@
+.contents-wrap {
+    width: 100%;
+}
+
+.inner {
+    display: block;
+    width: 74vw;
+    margin: 12rem auto;
+}
+
+.inner section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 4rem;
+    font-size: 2rem;
+    color: #333;
+}
