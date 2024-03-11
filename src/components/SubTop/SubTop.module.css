@@ -1,0 +1,40 @@
+.nav {
+    display: flex;
+    height: 59vh;
+    padding-top: 11rem;
+    background-position: top center;
+    background-size: cover;
+    color: #fff;
+}
+
+.inner {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 74vw;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.inner h2 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin: auto auto;
+}
+
+.nav.info {
+    background-image: url(/src/assets/images/bg_sub_top_01.png);
+}
+
+.nav.business {
+    background-image: url(/src/assets/images/bg_sub_top_03.png);
+}
+
+.nav.performance {
+    background-image: url(/src/assets/images/bg_sub_top_03.png);
+}
+
+.nav.recruitment {
+    background-image: url(/src/assets/images/bg_sub_top_04.png);
+}

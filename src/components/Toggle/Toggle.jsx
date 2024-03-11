@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import { ReactComponent as Arrow } from '../../assets/images/iconSelectArrow.svg';
+import { ReactComponent as Arrow } from '../../assets/svg/iconSelectArrow.svg';
+import { ReactComponent as LineArrow } from '../../assets/svg/iconSelectLineArrow.svg';
 import classes from './Toggle.module.css';
 
 export const Toggle = ({
 	children,
 	isActive,
+	isOnSubTop,
+	seletedText,
 }) => {
 	const [isOpen, setIsOpen] =
 		useState(null);
@@ -14,6 +17,7 @@ export const Toggle = ({
 			prev === 'open' ? 'closed' : 'open'
 		);
 	};
+	console.log(isOnSubTop);
 
 	return (
 		<div
@@ -25,10 +29,18 @@ export const Toggle = ({
 					: classes.initial
 			} ${
 				isActive ? classes.active : ''
+			} ${
+				isOnSubTop
+					? classes['nav-depth']
+					: null
 			}`}>
 			<button onClick={onClickToggle}>
-				Language
-				<Arrow />
+				{seletedText}
+				{isOnSubTop ? (
+					<LineArrow />
+				) : (
+					<Arrow />
+				)}
 			</button>
 			<div
 				className={classes['toggle-items']}>

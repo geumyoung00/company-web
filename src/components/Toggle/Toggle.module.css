@@ -3,6 +3,7 @@
     color: #fff;
     font-size: 1.6rem;
     position: relative;
+    z-index: 10;
 }
 
 .toggle button {
@@ -68,7 +69,7 @@
     height: 1em;
     fill: #fff;
     transform: rotate(0);
-    transition: ease 0.2s all;
+    transition: ease 0.3s all;
 }
 
 @keyframes open-animation {
@@ -107,6 +108,7 @@
 
 .active.toggle button {
     color: #333;
+    transition: ease .2s color;
 }
 
 .active.toggle button svg {
@@ -115,4 +117,46 @@
 
 .toggle.open button svg {
     transform: rotate(180deg);
+}
+
+.toggle.nav-depth {
+    width: 24.6rem;
+    height: 100%;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.toggle.nav-depth button {
+    margin: 0;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.toggle.nav-depth button svg {
+    fill: #333;
+    width: 1.5rem;
+    height: .8rem;
+}
+
+.toggle.nav-depth .toggle-items {
+    width: calc(100% - 2rem);
+    left: 1rem;
+    margin-top: 0;
+    z-index: 20;
+}
+
+.toggle.nav-depth .toggle-items ul li {
+    font-size: 1.6rem;
+    text-align: left;
+    text-indent: 1.5rem;
+    font-weight: 400;
+}
+
+.toggle.nav-depth .toggle-items ul li:hover a {
+    color: #333;
+}
+
+.toggle.nav-depth .toggle-items ul li a::after {
+    background: #333;
 }
