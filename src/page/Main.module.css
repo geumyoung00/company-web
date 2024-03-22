@@ -1,7 +1,21 @@
+.main .main-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+}
+
 .main section {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
+}
+
+.main section h3 {
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1;
 }
 
 .main section>img {
@@ -12,7 +26,6 @@
 
 .main_vs {
     background: #000;
-
 }
 
 .main_vs>img {
@@ -26,12 +39,15 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 4rem;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: start;
     width: 73.333%;
     height: inherit;
-    color: #fff;
-    font-weight: 600;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 300;
     margin: 0 auto;
+    padding: 11rem 0;
     z-index: 3;
 }
 
@@ -40,5 +56,425 @@
     font-size: 7rem;
     word-break: keep-all;
     line-height: 1.4;
+    font-weight: 500;
+    color: #fff;
+    margin: auto 0;
+}
+
+.main section.h-auto {
+    height: auto;
+}
+
+.main section.h-auto .inner {
+    padding: 17rem 0;
+}
+
+.main-text-section {
+    text-align: center;
+}
+
+.main-text-section .inner p {
+    grid-column: 2/12;
+    font-size: 4.5rem;
+    font-weight: 200;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+.main-text-section .inner p strong {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+}
+
+.business .inner {
+    align-content: flex-start;
+    padding: 15rem 0;
+}
+
+.business h3 {
+    grid-column: 1/6;
+}
+
+.business hr {
+    grid-column: 1/6;
+    width: calc(100% + 4rem);
+    margin: 4rem 0 5rem;
+}
+
+.business dl {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 3rem;
+    grid-column: 1/6;
+}
+
+.business .topic-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    grid-column-gap: 2rem;
+    padding: 1rem 0;
+    opacity: .6;
+}
+
+.business .topic-box .topic {
+    font-size: 2rem;
     font-weight: 400;
+}
+
+.business .topic-box .topic h4 {
+    font-size: 3.8rem;
+    line-height: 1;
+    margin-top: 0;
+    transition: ease .3s;
+}
+
+.business .topic-box .topic p {
+    line-height: 0;
+    overflow: hidden;
+    transition: ease 0.3s;
+}
+
+.business .topic-box .docker {
+    display: block;
+    width: 8rem;
+    height: auto;
+    font-size: 2rem;
+    font-weight: 900;
+    position: relative;
+}
+
+.business .topic-box .docker>* {
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.business .topic-box .docker>p.hover-hide {
+    color: #fff;
+    opacity: 0;
+}
+
+.business .topic-box .docker i {
+    width: 0;
+    height: 0;
+    background: linear-gradient(#56e9ff, #22c2ff);
+    border-radius: 50%;
+    z-index: -1;
+    overflow: hidden;
+    transition: ease 0.3s;
+}
+
+.business .topic-img {
+    grid-column: 6/13;
+    width: 55vw;
+    height: calc(100vh - 30rem);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.business .topic-box:hover {
+    opacity: 1;
+}
+
+.business .topic-box:hover h4 {
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.business .topic-box:hover p {
+    line-height: 2;
+}
+
+.business .topic-box:hover .docker {
+    height: 8rem;
+}
+
+.business .topic-box:hover .docker i {
+    width: 100%;
+    height: 100%;
+}
+
+.business .topic-box:hover .docker>p.hover-hide {
+    opacity: 0;
+}
+
+.business .topic-box:hover .docker>p.hover-hide {
+    opacity: 1;
+}
+
+.major .inner {
+    display: block;
+}
+
+.major .lists {
+    display: block;
+    margin: 10rem 0;
+    white-space: nowrap;
+}
+
+.major-item {
+    display: inline-block;
+    width: calc(25% - 2rem);
+    height: 44rem;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(0);
+    transition: ease .4s;
+}
+
+.major-item+.major-item {
+    margin-left: 4rem;
+}
+
+.major-item a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0 4rem;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.major-item .item-text {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 4rem;
+}
+
+.major-item .item-text h4 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+}
+
+.major-item .item-text p {
+    word-break: keep-all;
+    font-weight: 300;
+    line-height: 0;
+    overflow: hidden;
+    transition: ease .4s;
+    margin-bottom: 0;
+    white-space: normal;
+}
+
+.major-item .item-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: #000;
+}
+
+.major-item .item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .85;
+}
+
+.major-item .item-img::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 100, 213, 100));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: 0;
+    transition: ease .4s;
+}
+
+.major-item:hover {
+    transform: translateY(-4rem);
+}
+
+.major-item:hover .item-text p {
+    line-height: 1.5;
+}
+
+.major-item:hover .item-img::after {
+    transform: translateY(0);
+}
+
+.major-item:hover .item-img img {
+    opacity: 1;
+}
+
+section.recruit {
+    height: calc(100vh - 15rem);
+}
+
+.main section.recruit .inner {
+    padding: 0;
+    align-content: center;
+    align-items: flex-start;
+}
+
+
+section.recruit h3 {
+    font-size: 4rem;
+    margin-bottom: 3.7rem;
+    line-height: 1;
+}
+
+.recruit dd i.icon-plus {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    opacity: .7;
+    transition: ease .4s;
+}
+
+.recruit dd i.icon-plus svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: #fff;
+    transform: rotate(0);
+    transition: ease .4s;
+}
+
+.recruit .left a:hover i.icon-plus {
+    opacity: 1;
+}
+
+.recruit .left a:hover i.icon-plus svg {
+    transform: rotate(180deg);
+}
+
+.recruit .left,
+.recruit .right {
+    height: 44rem;
+    padding: 6rem;
+}
+
+.recruit .left {
+    grid-column: 2/7;
+    color: #fff;
+    background: url(../../public/images/main/img_main_recruit.png);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.recruit .left dl {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 4rem;
+}
+
+.recruit .left dt {
+    grid-column: 1/6;
+    margin-bottom: 3rem;
+}
+
+.recruit .left dt p {
+    display: block;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.recruit .left dd {
+    grid-column: 1/4;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+.recruit .left dd a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recruit .left dd a::after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: ease .4s;
+}
+
+.recruit .left dd a:hover::after {
+    width: 100%;
+}
+
+.recruit .left dd h4 {
+    font-size: 2.5rem;
+    padding: 2rem 0;
+}
+
+.recruit .right {
+    grid-column: 7/12;
+    width: calc(100% + 4rem);
+    background: #fff;
+    transform: translateX(-4rem);
+}
+
+.recruit .right dd a {
+    display: block;
+    border: 1px solid #666;
+    padding: 2.8rem 2.8rem;
+    box-shadow: 0 0 6px 0 rgba(51, 51, 51, 0);
+    opacity: .7;
+    transition: ease .3s;
+}
+
+.recruit .right dd+dd {
+    margin-top: 1.5rem;
+}
+
+.recruit .right dd h4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+}
+
+.recruit .right dd p {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.recruit .right dd p strong {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.recruit .right dd i.icon-plus {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.recruit .right dd i.icon-plus svg {
+    fill: #111;
+    transform: rotate(0);
+    transition: ease .5s;
+}
+
+.recruit .right dd a:hover i.icon-plus svg {
+    transform: rotate(180deg);
+}
+
+.recruit .right dd a:hover {
+    opacity: 1;
+    box-shadow: 0 0 6px 0 rgba(51, 51, 51, 0.26);
 }
