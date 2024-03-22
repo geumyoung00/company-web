@@ -1,4 +1,6 @@
-body {
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +12,42 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+*,
+body,
+html {
+  font-family: 'Pretendard';
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  box-sizing: border-box;
+  position: relative;
+}
+
+a,
+span {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+strong {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.hide {
+  display: block;
+  text-indent: -9999px;
+  visibility: hidden;
+  line-height: 0;
+}
+
+.wrap {
+  display: block;
+  width: 100vw;
+  overflow: hidden;
 }
