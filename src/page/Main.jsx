@@ -3,10 +3,20 @@ import { Link } from 'react-router-dom'
 import NAV_ITEMS from '../components/constants'
 import { MainSlide } from '../components/MainSlide/MainSlide'
 import { ReactComponent as Plus } from '../assets/svg/iconPlus.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Main = () => {
   const [seletedTopic, setSelectedTopic] = useState('')
+
+  const mainSlideHandler = item => {
+    console.log(item)
+    const targetLink = item.target.href
+    const path = targetLink.split('/')[4]
+    setSelectedTopic(path)
+  }
+  console.log('seletedTopic__', seletedTopic)
+
+  useEffect(() => {}, [seletedTopic])
 
   return (
     <div className={classes.main}>
@@ -34,17 +44,23 @@ const Main = () => {
           <dl className={classes.topics}>
             {NAV_ITEMS[1].dropdownItems.map(item => {
               return (
-                <Link key={item.id} to={`/business/${item.en}`} className={`${classes['topic-box']}`}>
-                  <div className={classes.docker}>
-                    <p>{item.id}</p>
-                    <p className={classes['hover-hide']}>{item.id}</p>
-                    <i />
-                  </div>
-                  <div className={classes.topic}>
-                    <h4>{item.kr}</h4>
-                    <p>{item.desc}</p>
-                  </div>
-                </Link>
+                <dd key={item.id}>
+                  <Link
+                    to={`/business/${item.en}`}
+                    className={`${classes['topic-box']}`}
+                    onMouseEnter={mainSlideHandler}
+                  >
+                    <div className={classes.docker}>
+                      <p>{item.id}</p>
+                      <p className={classes['hover-hide']}>{item.id}</p>
+                      <i />
+                    </div>
+                    <div className={classes.topic}>
+                      <h4>{item.kr}</h4>
+                      <p>{item.desc}</p>
+                    </div>
+                  </Link>
+                </dd>
               )
             })}
           </dl>

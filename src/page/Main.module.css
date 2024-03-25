@@ -313,12 +313,12 @@
 }
 
 section.recruit {
-    height: calc(100vh - 15rem);
+    height: calc(80vh - 15rem);
 }
 
 .main section.recruit .inner {
     padding: 0;
-    align-content: center;
+    align-content: flex-start;
     align-items: flex-start;
 }
 
