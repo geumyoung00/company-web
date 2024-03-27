@@ -3,20 +3,14 @@ import { Link } from 'react-router-dom'
 import NAV_ITEMS from '../components/constants'
 import { MainSlide } from '../components/MainSlide/MainSlide'
 import { ReactComponent as Plus } from '../assets/svg/iconPlus.svg'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import Responsive from '../components/MainSlide/Responsive'
 
 const Main = () => {
   const [seletedTopic, setSelectedTopic] = useState('')
-
-  const mainSlideHandler = item => {
-    console.log(item)
-    const targetLink = item.target.href
-    const path = targetLink.split('/')[4]
+  const onMouseEnter = path => {
     setSelectedTopic(path)
   }
-  console.log('seletedTopic__', seletedTopic)
-
-  useEffect(() => {}, [seletedTopic])
 
   return (
     <div className={classes.main}>
@@ -48,7 +42,7 @@ const Main = () => {
                   <Link
                     to={`/business/${item.en}`}
                     className={`${classes['topic-box']}`}
-                    onMouseEnter={mainSlideHandler}
+                    onMouseEnter={onMouseEnter.bind(null, item.en)}
                   >
                     <div className={classes.docker}>
                       <p>{item.id}</p>
@@ -72,63 +66,7 @@ const Main = () => {
       <section className={classes.major}>
         <div className={classes.inner}>
           <h3>주요실적</h3>
-          <ul className={classes['lists']}>
-            <li className={`${classes['major-item']}`}>
-              <a href="/">
-                <div className={classes['item-text']}>
-                  <h4>주요실적 프로젝트</h4>
-                  <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
-                </div>
-              </a>
-              <div className={classes['item-img']}>
-                <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
-              </div>
-            </li>
-            <li className={`${classes['major-item']} ${classes.active}`}>
-              <a href="/">
-                <div className={classes['item-text']}>
-                  <h4>주요실적 프로젝트</h4>
-                  <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
-                </div>
-              </a>
-              <div className={classes['item-img']}>
-                <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
-              </div>
-            </li>
-            <li className={`${classes['major-item']} ${classes.active}`}>
-              <a href="/">
-                <div className={classes['item-text']}>
-                  <h4>주요실적 프로젝트</h4>
-                  <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
-                </div>
-              </a>
-              <div className={classes['item-img']}>
-                <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
-              </div>
-            </li>
-            <li className={`${classes['major-item']} ${classes.active}`}>
-              <a href="/">
-                <div className={classes['item-text']}>
-                  <h4>주요실적 프로젝트</h4>
-                  <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
-                </div>
-              </a>
-              <div className={classes['item-img']}>
-                <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
-              </div>
-            </li>
-            <li className={`${classes['major-item']} ${classes.active}`}>
-              <a href="/">
-                <div className={classes['item-text']}>
-                  <h4>주요실적 프로젝트</h4>
-                  <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
-                </div>
-              </a>
-              <div className={classes['item-img']}>
-                <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
-              </div>
-            </li>
-          </ul>
+          <Responsive />
         </div>
       </section>
       <section className={`${classes.recruit}`}>

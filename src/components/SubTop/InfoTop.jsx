@@ -1,5 +1,5 @@
-import NavBar from '../NavBar/NavBar';
-import classes from './SubTop.module.css';
+import NavBar from '../NavBar/NavBar'
+import classes from './SubTop.module.css'
 
 const InfoTop = () => {
   return (
@@ -9,7 +9,7 @@ const InfoTop = () => {
         <NavBar />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default InfoTop;
+export default InfoTop
