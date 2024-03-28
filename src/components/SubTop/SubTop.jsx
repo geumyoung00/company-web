@@ -20,7 +20,7 @@ const SubTop = () => {
     >
       <div className={classes.inner}>
         <h2>{findDropdownItem.kr}</h2>
-        <NavBar navOne={findNavItem.kr} navTwo={findDropdownItem.kr} />
+        <NavBar />
       </div>
     </section>
   )

@@ -2,18 +2,18 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Main from './page/Main'
 import MainLayout from './page/roots/MainRoot'
 import SubLayout from './page/roots/SubRoot'
-import Greeting from './page/Info/Greeting'
-import History from './page/Info/History'
-import Organization from './page/Info/Organization'
-import Identity from './page/Info/CompanyIdentity'
-import Location from './page/Info/Location'
+
+import { Greeting, History, Organization, Identity, Location } from './page/Info/'
+
 import SystemIntergation from './page/business/SI'
 import Chart from './page/business/Chart'
 import Satellite from './page/business/Satellite'
 import Media from './page/business/Media'
 import ResearchDevelopment from './page/business/Rnd'
+
 import MajorPerform from './page/performance/MajorPerform'
 import AllPerform from './page/performance/AllPerform'
+
 import Welfare from './page/recruitment/Welfare'
 import RecruitmentNotice from './page/recruitment/RecruitmentNotice'
 import RecruitmentInfo from './page/recruitment/RecruitmentInfo'

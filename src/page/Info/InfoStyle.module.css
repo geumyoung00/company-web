@@ -1,5 +1,6 @@
 .greeting section {
     position: relative;
+    margin-bottom: 20rem;
 }
 
 .greeting section .left {
@@ -30,6 +31,9 @@
 }
 
 .greeting-text {
+    display: flex;
+    flex-flow: column wrap;
+    grid-row-gap: 4rem;
     margin-left: 8rem;
 }
 
@@ -39,6 +43,18 @@
 
 }
 
+.greeting-text .signature {
+    display: flex;
+    align-items: baseline;
+    grid-column-gap: 2rem;
+    margin: 2rem 0;
+}
+
+.greeting-text .signature strong {
+    color: #333;
+    font-size: 3rem;
+    font-weight: 600
+}
 
 .greeting section hr {
     position: relative;
