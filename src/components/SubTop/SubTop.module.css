@@ -24,17 +24,17 @@
 }
 
 .nav.info {
-    background-image: url(/src/assets/images/bg_sub_top_01.png);
+    background-image: url(/public/images/sub/bg_sub_top_01.png);
 }
 
 .nav.business {
-    background-image: url(/src/assets/images/bg_sub_top_03.png);
+    background-image: url(/public/images/sub/bg_sub_top_01.png);
 }
 
 .nav.performance {
-    background-image: url(/src/assets/images/bg_sub_top_03.png);
+    background-image: url(/public/images/sub/bg_sub_top_03.png);
 }
 
 .nav.recruitment {
-    background-image: url(/src/assets/images/bg_sub_top_04.png);
+    background-image: url(/public/images/sub/bg_sub_top_04.png);
 }

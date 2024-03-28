@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import RecruitmentTop from '../../components/SubTop/RecruitmentTop';
+import Footer from '../../components/Footer/Footer';
 
 const RecruitmentLayout = () => {
 	return (
@@ -8,6 +9,7 @@ const RecruitmentLayout = () => {
 			<Header />
 			<RecruitmentTop />
 			<Outlet />
+			<Footer />
 		</>
 	);
 };
