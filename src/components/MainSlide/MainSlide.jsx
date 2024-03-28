@@ -6,7 +6,7 @@ export const MainSlide = ({ seletedTopic }) => {
       {seletedTopic ? (
         <img
           className={classes.selected}
-          src={process.env.PUBLIC_URL + `images/main/img_main_${seletedTopic}.png`}
+          src={require(`../../assets/images/main/img_main_${seletedTopic}.png`)}
           alt={`${seletedTopic}`}
         />
       ) : (

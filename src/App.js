@@ -1,25 +1,22 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Main from './page/Main';
-import MainLayout from './page/roots/MainRoot';
-import InfoLayout from './page/roots/InfoRoot';
-import BusinessLayout from './page/roots/BusinessRoot';
-import PerformLayout from './page/roots/PerformRoot';
-import RecruitmentLayout from './page/roots/recruitRoot';
-import Greeting from './page/Info/Greeting';
-import History from './page/Info/History';
-import Organization from './page/Info/Organization';
-import Identity from './page/Info/CompanyIdentity';
-import Location from './page/Info/Location';
-import SystemIntergation from './page/business/SI';
-import Chart from './page/business/Chart';
-import Satellite from './page/business/Satellite';
-import Media from './page/business/Media';
-import ResearchDevelopment from './page/business/Rnd';
-import MajorPerform from './page/performance/MajorPerform';
-import AllPerform from './page/performance/AllPerform';
-import Welfare from './page/recruitment/Welfare';
-import RecruitmentNotice from './page/recruitment/RecruitmentNotice';
-import RecruitmentInfo from './page/recruitment/RecruitmentInfo';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Main from './page/Main'
+import MainLayout from './page/roots/MainRoot'
+import SubLayout from './page/roots/SubRoot'
+import Greeting from './page/Info/Greeting'
+import History from './page/Info/History'
+import Organization from './page/Info/Organization'
+import Identity from './page/Info/CompanyIdentity'
+import Location from './page/Info/Location'
+import SystemIntergation from './page/business/SI'
+import Chart from './page/business/Chart'
+import Satellite from './page/business/Satellite'
+import Media from './page/business/Media'
+import ResearchDevelopment from './page/business/Rnd'
+import MajorPerform from './page/performance/MajorPerform'
+import AllPerform from './page/performance/AllPerform'
+import Welfare from './page/recruitment/Welfare'
+import RecruitmentNotice from './page/recruitment/RecruitmentNotice'
+import RecruitmentInfo from './page/recruitment/RecruitmentInfo'
 
 function App() {
   const router = createBrowserRouter([
@@ -30,7 +27,7 @@ function App() {
     },
     {
       path: '/info',
-      element: <InfoLayout />,
+      element: <SubLayout />,
       children: [
         {
           path: 'greeting',
@@ -61,7 +58,7 @@ function App() {
     },
     {
       path: '/business',
-      element: <BusinessLayout />,
+      element: <SubLayout />,
       children: [
         {
           path: 'si',
@@ -92,7 +89,7 @@ function App() {
     },
     {
       path: '/performance',
-      element: <PerformLayout />,
+      element: <SubLayout />,
       children: [
         {
           path: 'major',
@@ -108,7 +105,7 @@ function App() {
     },
     {
       path: '/recruit',
-      element: <RecruitmentLayout />,
+      element: <SubLayout />,
       children: [
         {
           path: 'welfare',
@@ -127,9 +124,9 @@ function App() {
         },
       ],
     },
-  ]);
+  ])
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default App

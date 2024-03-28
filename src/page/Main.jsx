@@ -18,7 +18,7 @@ const Main = () => {
         <div className={classes.inner}>
           <h2>캐치프라이즈 문구 작성하기</h2>
         </div>
-        <img src={process.env.PUBLIC_URL + 'images/main/img_main_visual.png'} alt="메인 회사소개" />
+        <img src={require('../assets/images/main/img_main_visual.png')} alt="메인 회사소개" />
       </section>
       <section className={`${classes['h-auto']} ${classes['main-text-section']}`}>
         <div className={classes.inner}>
@@ -129,7 +129,7 @@ const Main = () => {
         </div>
       </section>
       <div className={classes['main-bg']}>
-        <img src={process.env.PUBLIC_URL + 'images/main/img_main_bg.png'} alt="" />
+        <img src={require('../assets/images/main/img_main_bg.png')} alt="" />
       </div>
     </div>
   )

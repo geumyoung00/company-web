@@ -54,7 +54,7 @@ const Responsive = () => {
               </a>
             </div>
             <div className={classes['item-img']}>
-              <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
+              <img src={require('../../assets/images/main/img_main_swipe_01.png')} alt="주요실적 프로젝트" />
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ const Responsive = () => {
               </a>
             </div>
             <div className={classes['item-img']}>
-              <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
+              <img src={require('../../assets/images/main/img_main_swipe_01.png')} alt="주요실적 프로젝트" />
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ const Responsive = () => {
               </a>
             </div>
             <div className={classes['item-img']}>
-              <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
+              <img src={require('../../assets/images/main/img_main_swipe_01.png')} alt="주요실적 프로젝트" />
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ const Responsive = () => {
               </a>
             </div>
             <div className={classes['item-img']}>
-              <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
+              <img src={require('../../assets/images/main/img_main_swipe_01.png')} alt="주요실적 프로젝트" />
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ const Responsive = () => {
               </a>
             </div>
             <div className={classes['item-img']}>
-              <img src={process.env.PUBLIC_URL + 'images/main/img_main_swipe_01.png'} alt="주요실적 프로젝트" />
+              <img src={require('../../assets/images/main/img_main_swipe_01.png')} alt="주요실적 프로젝트" />
             </div>
           </div>
         </div>

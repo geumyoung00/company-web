@@ -22,19 +22,3 @@
     font-weight: 700;
     margin: auto auto;
 }
-
-.nav.info {
-    background-image: url(/public/images/sub/bg_sub_top_01.png);
-}
-
-.nav.business {
-    background-image: url(/public/images/sub/bg_sub_top_01.png);
-}
-
-.nav.performance {
-    background-image: url(/public/images/sub/bg_sub_top_03.png);
-}
-
-.nav.recruitment {
-    background-image: url(/public/images/sub/bg_sub_top_04.png);
-}

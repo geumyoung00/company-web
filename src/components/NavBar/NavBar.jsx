@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { ReactComponent as Home } from '../../assets/svg/iconHome.svg'
 import { NAV_ITEMS } from '../constants'
 
-const NavBar = () => {
+const NavBar = ({ navOne, navTwo }) => {
   const isOnSubTop = true
   const location = useLocation()
   const { pathname } = location
@@ -23,7 +23,7 @@ const NavBar = () => {
 
   useEffect(() => {
     setSelectedDropdownItem(dropdownItem)
-  }, [dropdownItem])
+  }, [dropdownItem, navItem])
 
   const onClickNavItem = item => {
     setSelectedNavItem(item)
@@ -45,7 +45,7 @@ const NavBar = () => {
               {NAV_ITEMS.map(item => {
                 return (
                   <li key={item.en} onClick={onClickNavItem.bind(null, item)}>
-                    <Link to={`/${item.en}/${item.dropdownItems[0].en}`}>{item.kr}</Link>
+                    <Link to={`/${item.en}/${item.dropdownItems[0].en}`}>{navOne}</Link>
                   </li>
                 )
               })}
@@ -57,7 +57,7 @@ const NavBar = () => {
             <ul>
               {selectedNavItem.dropdownItems.map(item => (
                 <li key={item.en}>
-                  <Link to={`/${selectedNavItem.en}/${item.en}`}>{item.kr}</Link>
+                  <Link to={`/${selectedNavItem.en}/${item.en}`}>{navTwo}</Link>
                 </li>
               ))}
             </ul>

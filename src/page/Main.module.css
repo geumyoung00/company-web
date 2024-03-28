@@ -266,7 +266,7 @@ section.recruit h3 {
 .recruit .left {
     grid-column: 2/7;
     color: #fff;
-    background: url(../../public/images/main/img_main_recruit.png);
+    background: url(../assets/images/main/img_main_recruit.png) no-repeat;
     background-size: cover;
     overflow: hidden;
 }
