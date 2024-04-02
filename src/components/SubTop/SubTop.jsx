@@ -1,7 +1,7 @@
 import NavBar from '../NavBar/NavBar'
 import classes from './SubTop.module.css'
 import { useLocation } from 'react-router-dom'
-import NAV_ITEMS from '../constants'
+import { NAV_ITEMS } from '../constants'
 
 const SubTop = () => {
   const location = useLocation()

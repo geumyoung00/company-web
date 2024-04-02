@@ -1,8 +1,8 @@
 import Slider from 'react-slick'
 import './slick.css'
 import './slick-theme.css'
-import classes from './Responsive.module.css'
-import { ReactComponent as LineArrow } from '../../assets/svg/iconSelectLineArrow.svg'
+import classes from './MainPerfomanceSlide.module.css'
+import { ReactComponent as LineArrow } from '../../assets/svg/iconLineArrow.svg'
 
 const Responsive = () => {
   var settings = {
@@ -41,7 +41,7 @@ const Responsive = () => {
   }
 
   return (
-    <div className={`${['slider-container']} ${classes.carousel}`}>
+    <div className={`${['slider-container']} ${classes.carousel} main-performance`}>
       <Slider {...settings}>
         <div className={classes['item']}>
           <div className={classes.inner}>

@@ -224,7 +224,6 @@ section.recruit {
     align-items: flex-start;
 }
 
-
 section.recruit h3 {
     font-size: 4rem;
     margin-bottom: 3.7rem;
@@ -275,6 +274,11 @@ section.recruit h3 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 4rem;
+}
+
+.recruit .left dt,
+.recruit .left dd {
+    color: #fff;
 }
 
 .recruit .left dt {

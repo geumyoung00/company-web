@@ -5,7 +5,7 @@ export const Greeting = () => {
   return (
     <div className={`${classes['contents-wrap']} ${style.greeting}`}>
       <div className={classes.inner}>
-        <section>
+        <section className={classes.grid}>
           <p className="hide">GREETING</p>
           <div className={style.left}>
             <h3>

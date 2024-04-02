@@ -1,10 +1,10 @@
 import classes from './Main.module.css'
 import { Link } from 'react-router-dom'
-import NAV_ITEMS from '../components/constants'
-import { MainSlide } from '../components/MainSlide/MainSlide'
+import { NAV_ITEMS } from '../components/constants'
+import { MainBusinessSlide } from '../components/SlickSlide/MainBusinessSlide'
 import { ReactComponent as Plus } from '../assets/svg/iconPlus.svg'
 import { useState } from 'react'
-import Responsive from '../components/MainSlide/Responsive'
+import Responsive from '../components/SlickSlide/MainPerfomanceSlide'
 
 const Main = () => {
   const [seletedTopic, setSelectedTopic] = useState('')
@@ -59,7 +59,7 @@ const Main = () => {
             })}
           </dl>
           <div className={classes['topic-img']}>
-            <MainSlide seletedTopic={seletedTopic} />
+            <MainBusinessSlide seletedTopic={seletedTopic} />
           </div>
         </div>
       </section>

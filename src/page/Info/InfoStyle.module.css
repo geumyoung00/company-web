@@ -61,3 +61,77 @@
     width: 125%;
     margin: 6rem 0;
 }
+
+.history section {}
+
+.organization section {}
+
+.location .wrap {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 4rem;
+    margin: 2rem 0;
+}
+
+.location .map {
+    grid-column: 1/9;
+    min-height: 26rem;
+    width: 100%;
+    height: calc(100% - 2rem);
+    background: goldenrod;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 0;
+}
+
+.location .info-box {
+    grid-column: 8/13;
+    background: #0064d5;
+    width: 100%;
+    color: #fff;
+    padding: 6rem;
+    margin-top: 2rem;
+}
+
+.location .info-box p {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 8rem;
+}
+
+.location .info-box p::after {
+    display: block;
+    content: '';
+    width: 4rem;
+    height: 1px;
+    background: #fff;
+    transform: translateY(4rem);
+    opacity: .8;
+}
+
+.location .info-box dl {
+    margin-bottom: 4rem;
+}
+
+.location .info-box dl * {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.location .info-box dl dt {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.location .info-box dl dd {
+    margin-bottom: 2rem;
+}
+
+.location .info-box dl dd strong {
+    display: inline-block;
+    width: 10rem;
+    font-weight: 500;
+}

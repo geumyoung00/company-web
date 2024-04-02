@@ -1,6 +1,6 @@
-import classes from '../MainSlide/MainSlide.module.css'
+import classes from './MainBusinessSlide.module.css'
 
-export const MainSlide = ({ seletedTopic }) => {
+export const MainBusinessSlide = ({ seletedTopic }) => {
   return (
     <div className={classes['img-wrap']}>
       {seletedTopic ? (
@@ -10,7 +10,7 @@ export const MainSlide = ({ seletedTopic }) => {
           alt={`${seletedTopic}`}
         />
       ) : (
-        <img className={classes.selected} src={process.env.PUBLIC_URL + `images/main/img_main_si.png`} alt="si" />
+        <img className={classes.selected} src={require(`../../assets/images/main/img_main_si.png`)} alt="si" />
       )}
     </div>
   )
