@@ -62,9 +62,199 @@
     margin: 6rem 0;
 }
 
-.history section {}
+.history .title-box {
+    grid-column: 1/5;
+}
 
-.organization section {}
+.history .title-box h3 {
+    font-size: 5rem;
+    line-height: 1.2;
+}
+
+.history .title-box h3 strong {
+    color: #00c4ff;
+}
+
+.history .title-box .img-lists {
+    margin: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 8rem;
+}
+
+.history .title-box .img-lists li {
+    background: #000;
+}
+
+.history .title-box .img-lists li img {
+    opacity: .6;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.history .lists {
+    grid-column: 6/13;
+}
+
+.history .lists ol::before {
+    display: block;
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: #ddd;
+    position: absolute;
+    left: 0;
+    top: 2rem;
+}
+
+.history .lists ol {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+    grid-row-gap: 7rem;
+}
+
+.history .lists .card {
+    font-size: 2rem;
+    color: #bbb;
+}
+
+.history .lists .card .year {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #bbb;
+    margin-bottom: 3rem;
+}
+
+.history .lists .card .docker {
+    display: block;
+    width: .9rem;
+    height: .9rem;
+    background: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    left: -5.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.history .lists .card ul li {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.history .lists .card ul li+li {
+    margin-top: 1.8rem;
+}
+
+.history .lists .card.active ul li {
+    color: #333;
+    font-weight: 500;
+}
+
+.history .lists .card.active .year,
+.history .lists .card.active ul li .month {
+    color: #0064d5;
+}
+
+.history .lists .card.active .docker {
+    background: #0064d5;
+}
+
+.history .lists .card ul li .month {
+    font-weight: 800;
+}
+
+.history .lists .card ul li .text span {
+    font-weight: 300;
+}
+
+.organization .chart {
+    display: block;
+    max-width: 96rem;
+    margin: 0 auto;
+}
+
+.chart::after {
+    display: block;
+    content: '';
+    width: 1px;
+    height: calc(100% - 10rem);
+    background: #ddd;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.chart .row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    grid-column-gap: 8rem;
+    grid-row-gap: 4rem;
+    margin-bottom: 12rem;
+}
+
+.chart .row.teams {
+    margin-bottom: 0;
+}
+
+.chart .row::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.chart .row:first-child::after {
+    display: none;
+}
+
+.chart .box {
+    display: block;
+    padding: 2rem;
+    background: #fff;
+}
+
+.chart .box.primary {
+    margin: 0 auto;
+}
+
+.chart .box.primary .text {
+    background: #0064d5;
+    color: #fff;
+}
+
+.chart .box.secondary .text {
+    background: #00c4ff;
+    color: #fff;
+}
+
+.chart .box .text {
+    width: 21rem;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    padding: 2.5rem 0;
+    background: #e8f1f4;
+}
 
 .location .wrap {
     display: grid;
