@@ -1,10 +1,10 @@
 import classes from './Main.module.css'
 import { Link } from 'react-router-dom'
-import NAV_ITEMS from '../components/constants'
-import { MainSlide } from '../components/MainSlide/MainSlide'
+import { NAV_ITEMS } from '../components/constants'
+import { MainBusinessSlide } from '../components/SlickSlide/MainBusinessSlide'
 import { ReactComponent as Plus } from '../assets/svg/iconPlus.svg'
 import { useState } from 'react'
-import Responsive from '../components/MainSlide/Responsive'
+import Responsive from '../components/SlickSlide/MainPerfomanceSlide'
 
 const Main = () => {
   const [seletedTopic, setSelectedTopic] = useState('')
@@ -18,7 +18,7 @@ const Main = () => {
         <div className={classes.inner}>
           <h2>캐치프라이즈 문구 작성하기</h2>
         </div>
-        <img src={process.env.PUBLIC_URL + 'images/main/img_main_visual.png'} alt="메인 회사소개" />
+        <img src={require('../assets/images/main/img_main_visual.png')} alt="메인 회사소개" />
       </section>
       <section className={`${classes['h-auto']} ${classes['main-text-section']}`}>
         <div className={classes.inner}>
@@ -59,7 +59,7 @@ const Main = () => {
             })}
           </dl>
           <div className={classes['topic-img']}>
-            <MainSlide seletedTopic={seletedTopic} />
+            <MainBusinessSlide seletedTopic={seletedTopic} />
           </div>
         </div>
       </section>
@@ -129,7 +129,7 @@ const Main = () => {
         </div>
       </section>
       <div className={classes['main-bg']}>
-        <img src={process.env.PUBLIC_URL + 'images/main/img_main_bg.png'} alt="" />
+        <img src={require('../assets/images/main/img_main_bg.png')} alt="" />
       </div>
     </div>
   )

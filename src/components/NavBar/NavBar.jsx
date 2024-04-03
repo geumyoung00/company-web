@@ -23,7 +23,8 @@ const NavBar = () => {
 
   useEffect(() => {
     setSelectedDropdownItem(dropdownItem)
-  }, [dropdownItem])
+    setSelectedNavItem(navItem)
+  }, [dropdownItem, navItem])
 
   const onClickNavItem = item => {
     setSelectedNavItem(item)

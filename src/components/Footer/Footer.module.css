@@ -23,6 +23,7 @@
 
 .info {
     grid-column: 3/13;
+    color: #fff;
 }
 
 .info dl {

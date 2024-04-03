@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from '../../assets/svg/logo.svg'
 import { ReactComponent as LogoColor } from '../../assets/svg/logoColor.svg'
 import { Toggle } from '../Toggle/Toggle'
 import { Link } from 'react-router-dom'
-import NAV_ITEMS from '../constants'
+import { NAV_ITEMS } from '../constants'
 
 const Header = () => {
   const [isHeaderActive, setIsHeaderActive] = useState(false)

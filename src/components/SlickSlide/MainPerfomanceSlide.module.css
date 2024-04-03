@@ -68,21 +68,18 @@
     font-size: 1.7rem;
     font-weight: 300;
     line-height: 1;
-    width: 9.4rem;
-    height: 1.8rem;
-    overflow: hidden;
+    width: 10rem;
+    height: 1.6rem;
+    overflow: visible;
     transition: ease .4s;
     transform: translateY(100%);
 }
 
 .carousel .item-text a.more svg {
-    width: 1.5rem;
-    height: .8rem;
+    width: 1.6rem;
+    height: 1.6rem;
     fill: #fff;
-    position: absolute;
-    right: -.4rem;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
+    text-shadow: 0 0 1px 1px #fff;
 }
 
 .carousel .item-img {
@@ -109,6 +106,26 @@
 .carousel .item:hover .item-text a.more {
     margin-top: 2rem;
     transform: translateY(0);
+}
+
+.carousel .item:hover .item-text a.more:hover svg {
+    animation-name: rolling;
+    animation-duration: .4s;
+    animation-delay: .2s;
+}
+
+@keyframes rolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(40%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .carousel .item:hover .item-img img {

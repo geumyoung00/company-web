@@ -224,7 +224,6 @@ section.recruit {
     align-items: flex-start;
 }
 
-
 section.recruit h3 {
     font-size: 4rem;
     margin-bottom: 3.7rem;
@@ -266,7 +265,7 @@ section.recruit h3 {
 .recruit .left {
     grid-column: 2/7;
     color: #fff;
-    background: url(../../public/images/main/img_main_recruit.png);
+    background: url(../assets/images/main/img_main_recruit.png) no-repeat;
     background-size: cover;
     overflow: hidden;
 }
@@ -275,6 +274,11 @@ section.recruit h3 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 4rem;
+}
+
+.recruit .left dt,
+.recruit .left dd {
+    color: #fff;
 }
 
 .recruit .left dt {

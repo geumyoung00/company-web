@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { ReactComponent as Arrow } from '../../assets/svg/iconSelectArrow.svg';
-import { ReactComponent as LineArrow } from '../../assets/svg/iconSelectLineArrow.svg';
-import classes from './Toggle.module.css';
+import { useState } from 'react'
+import { ReactComponent as Arrow } from '../../assets/svg/iconSelectArrow.svg'
+import { ReactComponent as ArrowHead } from '../../assets/svg/iconSelecArrowHead.svg'
+import classes from './Toggle.module.css'
 
 export const Toggle = ({ children, isActive, isOnSubTop, selectedText }) => {
-  const [isOpen, setIsOpen] = useState(null);
+  const [isOpen, setIsOpen] = useState(null)
   const onClickToggle = () => {
     // true면 open상태 / false면 closed 상태
-    setIsOpen(prev => (prev === 'open' ? 'closed' : 'open'));
-  };
+    setIsOpen(prev => (prev === 'open' ? 'closed' : 'open'))
+  }
 
   return (
     <div
@@ -18,9 +18,9 @@ export const Toggle = ({ children, isActive, isOnSubTop, selectedText }) => {
     >
       <button onClick={onClickToggle}>
         {selectedText}
-        {isOnSubTop ? <LineArrow /> : <Arrow />}
+        {isOnSubTop ? <ArrowHead /> : <Arrow />}
       </button>
       <div className={classes['toggle-items']}>{children}</div>
     </div>
-  );
-};
+  )
+}

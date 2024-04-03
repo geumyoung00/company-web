@@ -1,0 +1,40 @@
+.tabs {
+    margin-bottom: 6rem;
+}
+
+.tabs ul {
+    display: flex;
+    grid-column-gap: 2rem;
+}
+
+.tabs ul li {
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .5;
+}
+
+.tabs ul li i {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0064d5;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.tabs ul li:hover {
+    opacity: 1;
+}
+
+.tabs ul li.active {
+    font-weight: 700;
+    color: #0064d5;
+    opacity: 1;
+}
+
+.tabs ul li.active i {
+    opacity: 1;
+}

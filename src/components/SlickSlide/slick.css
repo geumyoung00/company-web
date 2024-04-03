@@ -114,6 +114,15 @@
     display: none;
 }
 
-.slick-list {
+.main-performance .slick-list {
     overflow: visible;
+}
+
+
+.slick-slide.slick-center ul {
+    display: block;
+}
+
+.slick-slide.slick-center .card {
+    width: calc(450px) !important;
 }
