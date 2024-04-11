@@ -62,116 +62,152 @@
     margin: 6rem 0;
 }
 
-.history .title-box {
-    grid-column: 1/5;
+.history section p.section-title {
+    margin-bottom: 4rem;
 }
 
-.history .title-box h3 {
+.history h3 {
     font-size: 5rem;
-    line-height: 1.2;
+    line-height: 1;
+    margin-bottom: 10rem;
 }
 
-.history .title-box h3 strong {
+.history h3 strong {
     color: #00c4ff;
 }
 
-.history .title-box .img-lists {
-    margin: 8rem 0;
+.history .box-title {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2.2px;
+    color: #0064d5;
+    margin-bottom: 5rem;
+    padding-top: 2rem;
+}
+
+.history .lists .box {
     display: flex;
-    flex-direction: column;
-    grid-row-gap: 8rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow: hidden;
 }
 
-.history .title-box .img-lists li {
-    background: #000;
+
+.history .lists .img,
+.history .lists .years {
+    width: calc(50% - 2rem);
 }
 
-.history .title-box .img-lists li img {
-    opacity: .6;
-    width: 100%;
-    height: 100%;
+.history .lists .img img {
+    width: 500px;
+    height: auto;
     object-fit: cover;
 }
 
-.history .lists {
-    grid-column: 6/13;
+.history .lists .year {
+    padding: 4rem 0;
+    margin-left: 2rem;
 }
 
-.history .lists ol::before {
-    display: block;
-    content: '';
+.history .lists .year dt {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4rem
+}
+
+.history .lists .year dd {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.history .lists .year dd+dd {
+    margin-top: 2rem;
+}
+
+.history .lists .year dd strong {
+    display: inline-block;
+    width: 5rem;
+}
+
+.history .lists .box:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.history .lists .box:nth-child(even) .img img {
+    margin: 0 auto;
+    margin-right: 0;
+}
+
+.history .lists .box:nth-child(even) .year {
+    margin-left: 0;
+    margin-right: 2rem;
+}
+
+.history .lists .box:nth-child(even) .year dd {
+    flex-direction: row-reverse;
+}
+
+.history .lists .line {
     width: 1px;
     height: 100%;
     background: #ddd;
     position: absolute;
-    left: 0;
-    top: 2rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }
 
-.history .lists ol {
-    display: flex;
-    flex-direction: column;
-    padding-left: 5rem;
-    grid-row-gap: 7rem;
-}
-
-.history .lists .card {
-    font-size: 2rem;
-    color: #bbb;
-}
-
-.history .lists .card .year {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1;
-    color: #bbb;
-    margin-bottom: 3rem;
-}
-
-.history .lists .card .docker {
+.history .lists .year dt::before {
     display: block;
-    width: .9rem;
-    height: .9rem;
+    content: '';
+    width: 1px;
+    height: 0;
+    background: #0064d5;
+    position: absolute;
+    left: -40.5px;
+    z-index: 1;
+    transition: ease .2s;
+}
+
+.history .lists .year dt::after {
+    display: block;
+    content: '';
+    width: 11px;
+    height: 11px;
     background: #ddd;
     border-radius: 50%;
     position: absolute;
-    left: -5.4rem;
+    left: -4.6rem;
+    z-index: 2;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
+    transition: ease .2s;
 }
 
-.history .lists .card ul li {
-    display: grid;
-    grid-template-columns: 5rem 1fr;
-    font-size: 2rem;
-    line-height: 1;
+.history .lists .box:nth-child(even) .year dt::before {
+    left: auto;
+    right: -40.5px
 }
 
-.history .lists .card ul li+li {
-    margin-top: 1.8rem;
+.history .lists .box:nth-child(even) .year dt::after {
+    left: auto;
+    right: -46px;
 }
 
-.history .lists .card.active ul li {
-    color: #333;
-    font-weight: 500;
+.history .lists.active .year dt::before {
+    height: 34rem;
 }
 
-.history .lists .card.active .year,
-.history .lists .card.active ul li .month {
-    color: #0064d5;
-}
-
-.history .lists .card.active .docker {
+.history .lists.active .year dt::after {
     background: #0064d5;
-}
-
-.history .lists .card ul li .month {
-    font-weight: 800;
-}
-
-.history .lists .card ul li .text span {
-    font-weight: 300;
 }
 
 .organization .chart {

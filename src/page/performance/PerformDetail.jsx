@@ -2,12 +2,43 @@ import { useLocation } from 'react-router-dom'
 import classes from '../common.module.css'
 import style from './PerformanceStyle.module.css'
 import BoardTab from '../../components/BoardTab/BoardTab'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { ReactComponent as ArrowHead } from '../../assets/svg/iconSelecArrowHead.svg'
 
 export const PerformDetail = () => {
   const location = useLocation()
-  const { pathname } = location
+  const navigate = useNavigate()
+  const { id } = useParams()
+  const { pathname, state } = location
   const path = pathname.split('/')[2]
+  const { items } = state
+  const item = items.find(item => item.id === id)
+
+  let findItemIdx = items.findIndex(item => item.id === id)
+  let navigateItem = {}
+  const navigateHandler = state => {
+    if (state === 'prev') {
+      findItemIdx--
+      navigateItem = items[findItemIdx]
+      if (!navigateItem) {
+        alert('처음 글입니다.')
+        navigate(`/performance/${path}`)
+      } else {
+        navigate(`/performance/${path}/${navigateItem.id}`)
+      }
+    } else if (state === 'next') {
+      findItemIdx++
+      navigateItem = items[findItemIdx]
+      if (findItemIdx > items.length - 1) {
+        alert('마지막 글입니다.')
+        navigate(`/performance/${path}`)
+      } else {
+        navigate(`/performance/${path}/${navigateItem.id}`)
+      }
+    } else {
+      navigate(`/performance/${path}`)
+    }
+  }
 
   return (
     <div className={`${classes['contents-wrap']} ${style.performance}  ${style['all-perform']}`}>
@@ -19,41 +50,60 @@ export const PerformDetail = () => {
             <div className={style.img}></div>
             <div className={style.contents}>
               <p className={style.title}>
-                사업 프로젝트명
-                <span>2022년</span>
+                {item.title}
+                <span>{item.period}</span>
               </p>
               <div className={style.table}>
                 <dl>
-                  <dt>구분</dt>
-                  <dd>상세내용</dd>
+                  <dt>사업부문</dt>
+                  <dd>{item.labelKr}</dd>
                 </dl>
                 <dl>
-                  <dt>구분</dt>
-                  <dd>상세내용</dd>
+                  <dt>발주처</dt>
+                  <dd>{item.content.client}</dd>
                 </dl>
                 <dl>
-                  <dt>구분</dt>
-                  <dd>상세내용</dd>
+                  <dt>추진 업무</dt>
+                  <dd>{item.content.work}</dd>
                 </dl>
                 <dl>
-                  <dt>구분</dt>
-                  <dd>상세내용</dd>
+                  <dt>기술</dt>
+                  <dd>{item.content.skill}</dd>
                 </dl>
               </div>
-              <ul className={style['page-btn']}>
-                <li className={style.prev}>
-                  <a href="/">
+              <ul>
+                <li>
+                  <Link
+                    className={style['btn-list']}
+                    onClick={() => {
+                      navigateHandler('prev')
+                    }}
+                    state={{ items: items }}
+                  >
                     <ArrowHead />
                     이전 글
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/">목록으로</a>
+                  <Link
+                    className={style['btn-list']}
+                    onClick={() => {
+                      navigateHandler()
+                    }}
+                  >
+                    목록으로
+                  </Link>
                 </li>
-                <li className={style.next}>
-                  <a href="/">
+                <li>
+                  <Link
+                    className={style['btn-list']}
+                    onClick={() => {
+                      navigateHandler('next')
+                    }}
+                    state={{ items: items }}
+                  >
                     다음 글<ArrowHead />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -22,22 +22,22 @@ export const SystemIntergation = () => {
             <ul>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무1에 대한 간략한 설명문구</span>
+                  <strong>해양 GIS 시스템</strong>
+                  <span>해양·기상 등의 관측·예측 시각화 데이터 제공</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg01.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무2에 대한 간략한 설명문구</span>
+                  <strong>통합 데이터베이스</strong>
+                  <span>통합 데이터베이스를 구축과 서비스 지원</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg02.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무3에 대한 간략한 설명문구</span>
+                  <strong>통합 모니터링 시스템</strong>
+                  <span>데이터 수집·관리현황, 서버 상태 등 시스템 지원</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg03.png')} alt="주요업무" />
               </li>

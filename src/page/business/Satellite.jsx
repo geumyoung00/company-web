@@ -6,13 +6,11 @@ export const Satellite = () => {
     <div className={`${classes['contents-wrap']} ${style.buesiness}`}>
       <div className={classes.inner}>
         <section>
-          <h3 className={`${classes['section-title']} ${style['section-title']}`}>위성사업</h3>
+          <h3 className={`${classes['section-title']} ${style['section-title']}`}>해양 위성 시스템</h3>
           <div className={style.description}>
             <p>
-              고객과의 충분한 대화와 협의를 통해 요구사항을 파악하여 고객이 만족하는 시스템을 만들어가고 있습니다.
-              <br />
-              특히 해양분야, 공간정보분야에 대하여 많은 경험을 가지고 있으며 WEB시스템과 CS시스템에 대한 경험 또한두루
-              갖추고 있습니다.
+              해양위성센터의 기본 시설, 인프라(네트워크, 하드웨어, 소프트웨어), 인력운영 및 시스템에 대한 ISP를 수립하고
+              운영 프로세스를 구축하여 현재까지 위성정보 수집·관리·배포 시스템을 구축 및 운영을 지원하고 있습니다.
             </p>
           </div>
           <div className={style.lists}>
@@ -20,22 +18,22 @@ export const Satellite = () => {
             <ul>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무1에 대한 간략한 설명문구</span>
+                  <strong>위성영상 활용 솔루션</strong>
+                  <span>위성영상 전처리 기술 개발 및 활용</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg01.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무2에 대한 간략한 설명문구</span>
+                  <strong>위성영상 활용 연구</strong>
+                  <span>원격탐사, 해양·기상, 기후변화, 재해재난 등</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg02.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무3에 대한 간략한 설명문구</span>
+                  <strong>해양위성 인프라 구축</strong>
+                  <span>해양위성센터의 시스템 관리 및 운영 지원</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg03.png')} alt="주요업무" />
               </li>

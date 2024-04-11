@@ -9,10 +9,9 @@ export const Media = () => {
           <h3 className={`${classes['section-title']} ${style['section-title']}`}>해양예보방송</h3>
           <div className={style.description}>
             <p>
-              고객과의 충분한 대화와 협의를 통해 요구사항을 파악하여 고객이 만족하는 시스템을 만들어가고 있습니다.
-              <br />
-              특히 해양분야, 공간정보분야에 대하여 많은 경험을 가지고 있으며 WEB시스템과 CS시스템에 대한 경험 또한두루
-              갖추고 있습니다.
+              해양조사 정보와 예보정보를 이용한 해양예보방송을 운영함으로써 다양한 해양활동에 도움이 될 수 있도록
+              지원하고 있습니다. <br />
+              다양한 영상을 제작하고 특히, 해양에 관련된 양상을 제작하여 해양산업의 활성화를 위해 노력하고 있습니다.
             </p>
           </div>
           <div className={style.lists}>
@@ -20,22 +19,22 @@ export const Media = () => {
             <ul>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무1에 대한 간략한 설명문구</span>
+                  <strong>해양예보방송 운영</strong>
+                  <span>더욱 친근한 해양예보를 위한 기획 및 홍보</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg01.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무2에 대한 간략한 설명문구</span>
+                  <strong>해양예보방송 제작</strong>
+                  <span>보다 쉬운 정보제공을 위한 방송 제작</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg02.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무3에 대한 간략한 설명문구</span>
+                  <strong>SHORT 영상 제작</strong>
+                  <span>변화하는 미디어 환경에 따른 콘텐츠 제공</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg03.png')} alt="주요업무" />
               </li>

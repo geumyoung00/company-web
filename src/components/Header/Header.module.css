@@ -1,11 +1,23 @@
 .header-wrap {
     width: 100%;
-    /* height: fit-content; */
     position: absolute;
     left: 0;
     top: 0;
     z-index: 999;
-    transition: ease 0.2s background;
+}
+
+.header-wrap::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: ease .2s;
 }
 
 .header {
@@ -22,14 +34,16 @@
     display: block;
     content: '';
     width: 100%;
-    height: 50vh;
+    height: 44vh;
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
     background: #fff;
     z-index: -5;
     transform: translateY(-50vh);
-    transition: ease .5s transform;
+    transition: ease .5s all;
+    transition-property: transform opacity;
 }
 
 .logo {
@@ -45,13 +59,14 @@
 
 .header hr {
     width: 0%;
+    opacity: 0;
     position: absolute;
     left: 50%;
     top: 11rem;
     transform: translate(-50%, 0);
     outline: 0;
     border-top: 1px solid #ddd;
-    transition: ease .2s width;
+    transition: ease .3s all;
 }
 
 .header nav {
@@ -78,7 +93,7 @@
     font-size: 2rem;
     color: #fff;
     text-align: center;
-    transition: ease 0.3s width, ease .3s color;
+    transition: ease 0.3s width, ease .2s color;
 }
 
 .depth1-list>ul>li i {
@@ -128,11 +143,12 @@
 .header-wrap .depth2 {
     width: 100%;
     z-index: -3;
+    opacity: 0;
     position: absolute;
     top: 0;
     transform: translateY(-50vh);
     overflow: hidden;
-    transition: ease .5s transform;
+    transition: ease .5s;
 }
 
 .depth1-list>ul>li:last-child .depth2 ul {
@@ -168,16 +184,13 @@
 }
 
 /* header active style */
-.active.header-wrap {
-    background: #fff;
+.active.header-wrap::after {
+    opacity: 1;
 }
 
 .active .header .header-background {
     transform: translateY(0);
-}
-
-.active .header nav {
-    background: #fff;
+    opacity: 1;
 }
 
 .active .header .depth1-list>ul {
@@ -191,7 +204,8 @@
 
 .active.header-wrap .depth2 {
     transform: translateY(11rem);
-    height: calc(50vh - 11rem);
+    height: calc(44vh - 11rem);
+    opacity: 1;
 }
 
 .active.header-wrap .depth2 ul {
@@ -200,4 +214,5 @@
 
 .active .header hr {
     width: 100%;
+    opacity: 1;
 }
