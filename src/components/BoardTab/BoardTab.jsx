@@ -2,7 +2,6 @@ import { useState } from 'react'
 import classes from './BoardTab.module.css'
 import { Link } from 'react-router-dom'
 import { NAV_ITEMS } from '../../components/constants/NAV_ITEMS'
-import { RECRUIT_ITEMS } from '../constants'
 import { useLocation } from 'react-router-dom'
 
 const BoardTab = ({ filterItemHandler }) => {
@@ -11,11 +10,13 @@ const BoardTab = ({ filterItemHandler }) => {
   const path = pathname.split('/')[1]
   let names = []
   if (path === 'recruit') {
-    names = RECRUIT_ITEMS
+    names = [
+      { en: 'open', kr: '모집 중' },
+      { en: 'close', kr: '모집 마감' },
+    ]
   } else {
     names = NAV_ITEMS.find(item => item.en === 'business').dropdownItems
   }
-
   const navItems = [{ en: 'all', kr: '전체' }, ...names]
 
   const [activText, setActiveText] = useState('all')
