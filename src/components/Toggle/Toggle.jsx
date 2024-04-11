@@ -13,22 +13,22 @@ export const Toggle = ({ children, isActive, isOnSubTop, selectedText }) => {
     // setIsOpen('open')
   }
 
-  useEffect(() => {
-    function listener(e) {
-      //모달 안을 클릭 했는지
-      if (!ref.current || ref.current.contains(e.target)) {
-        console.log('outside')
-        return
-      }
-      //모달 밖을 클릭 했는지
-      console.log('inside')
-      setIsOpen('closed')
-    }
-    document.addEventListener('mousedown', listener)
-    return () => {
-      document.removeEventListener('mousedown', listener)
-    }
-  }, [ref])
+  // useEffect(() => {
+  //   function listener(e) {
+  //     //모달 안을 클릭 했는지
+  //     if (!ref.current || ref.current.contains(e.target)) {
+  //       console.log('outside')
+  //       return
+  //     }
+  //     //모달 밖을 클릭 했는지
+  //     console.log('inside')
+  //     setIsOpen('closed')
+  //   }
+  //   document.addEventListener('mousedown', listener)
+  //   return () => {
+  //     document.removeEventListener('mousedown', listener)
+  //   }
+  // }, [ref])
 
   return (
     <div
