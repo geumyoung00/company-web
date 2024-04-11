@@ -1,46 +1,47 @@
+import { useState } from 'react'
 import classes from './BoardTab.module.css'
+import { Link } from 'react-router-dom'
+import { NAV_ITEMS } from '../../components/constants/NAV_ITEMS'
+import { RECRUIT_ITEMS } from '../constants'
+import { useLocation } from 'react-router-dom'
 
-const BoardTab = () => {
+const BoardTab = ({ filterItemHandler }) => {
+  const location = useLocation()
+  const { pathname } = location
+  const path = pathname.split('/')[1]
+  let names = []
+  if (path === 'recruit') {
+    names = RECRUIT_ITEMS
+  } else {
+    names = NAV_ITEMS.find(item => item.en === 'business').dropdownItems
+  }
+
+  const navItems = [{ en: 'all', kr: '전체' }, ...names]
+
+  const [activText, setActiveText] = useState('all')
+  function tabHandler(tabName) {
+    setActiveText(tabName)
+  }
+
   return (
     <div className={classes['tabs']}>
-      <ul>
-        <li className={classes.active}>
-          <a href="/">
-            전체
-            <i />
-          </a>
-        </li>
-        <li>
-          <a href="/">
-            소프트웨어 개발
-            <i />
-          </a>
-        </li>
-        <li>
-          <a href="/">
-            해도제작
-            <i />
-          </a>
-        </li>
-        <li>
-          <a href="/">
-            위성사업
-            <i />
-          </a>
-        </li>
-        <li>
-          <a href="/">
-            해양예보방송
-            <i />
-          </a>
-        </li>
-        <li>
-          <a href="/">
-            연구사업
-            <i />
-          </a>
-        </li>
-      </ul>
+      <div className={classes.inner}>
+        {navItems.map(item => {
+          return (
+            <Link
+              className={`${classes.btn} ${item.en === activText ? classes.active : ''}`}
+              key={item.en}
+              onClick={() => {
+                tabHandler(item.en)
+                filterItemHandler(item.en)
+              }}
+            >
+              <span>{item.kr}</span>
+              <i className={classes.docker} />
+            </Link>
+          )
+        })}
+      </div>
     </div>
   )
 }

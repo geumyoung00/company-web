@@ -71,33 +71,32 @@
     text-indent: 4rem;
 }
 
-.detail-contents .contents .page-btn {
+.detail-contents .contents ul {
     display: flex;
     justify-content: space-between;
-    margin-top: 4rem;
 }
 
-.detail-contents .contents .page-btn li {
-    font-size: 1.8rem;
-    font-weight: 500;
-}
-
-.detail-contents .contents .page-btn li a {
+.detail-contents .contents .btn-list {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    grid-column-gap: .8rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1;
+    margin: 4rem auto 0;
+    margin-right: 0;
+    padding: 1rem;
 }
 
-.detail-contents .contents .page-btn li svg {
-    display: inline-block;
-    width: 1.3rem;
-    height: 1.3rem;
-    margin-right: 1rem;
+.detail-contents .contents .btn-list svg {
+    width: 1.1rem;
+    height: .7rem;
     transform: rotate(90deg);
+    margin-bottom: 2px;
     fill: #666;
 }
 
-.detail-contents .contents .page-btn li.next svg {
-    margin-right: 0;
-    margin-left: 1rem;
+.detail-contents .contents li:last-child .btn-list svg {
     transform: rotate(-90deg);
 }

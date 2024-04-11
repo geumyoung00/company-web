@@ -1,8 +1,9 @@
 import { useLocation } from 'react-router-dom'
 import { ReactComponent as LineArrow } from '../../assets/svg/iconLineArrow.svg'
 import classes from './ListCard.module.css'
+import { Link } from 'react-router-dom'
 
-const ListCard = () => {
+const ListCard = ({ item, items }) => {
   const location = useLocation()
   const { pathname } = location
   const path = pathname.split('/')[2]
@@ -13,10 +14,10 @@ const ListCard = () => {
         <img src={require('../../assets/images/sub/performance/img_bg_sample.png')} alt="프로젝트" />
         <div className={classes['info-text']}>
           <dl>
-            <dt>사업명 프로젝트명</dt>
+            <dt>{item.title}</dt>
             <dd>
               <strong>사업기간</strong>
-              <span>2023년 4월 ~ 12월</span>
+              <span>{item.period}</span>
             </dd>
             <dd>
               <strong>사업내용</strong>
@@ -25,7 +26,12 @@ const ListCard = () => {
           </dl>
         </div>
       </div>
-      <a className={classes['href-item']} href={`/performance/${path}/detail`} alt="게시글 상세보기">
+      <Link
+        className={classes['href-item']}
+        to={`/performance/${path}/${item.id}`}
+        state={{ items: items }}
+        alt="게시글 상세보기"
+      >
         <img src={require('../../assets/images/sub/performance/img_bg_sample.png')} alt="프로젝트" />
         <div className={classes['btn-move']}>
           <p className={classes.title}>사업명 프로젝트명</p>
@@ -33,7 +39,7 @@ const ListCard = () => {
             <LineArrow />
           </i>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }

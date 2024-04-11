@@ -9,35 +9,34 @@ export const Chart = () => {
           <h3 className={`${classes['section-title']} ${style['section-title']}`}>해도 제작</h3>
           <div className={style.description}>
             <p>
-              고객과의 충분한 대화와 협의를 통해 요구사항을 파악하여 고객이 만족하는 시스템을 만들어가고 있습니다.
-              <br />
-              특히 해양분야, 공간정보분야에 대하여 많은 경험을 가지고 있으며 WEB시스템과 CS시스템에 대한 경험 또한두루
-              갖추고 있습니다.
+              국가에서 인정한 해도제작업체(등록번호 제21호)로서, 다양한 종류의 종이해도와 전자해도의 제작 업무를
+              수행하고 있습니다.
             </p>
+            <p></p>
           </div>
           <div className={style.lists}>
             <h4>주요업무</h4>
             <ul>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무1에 대한 간략한 설명문구</span>
-                </div>
-                <img src={require('../../assets/images/sub/business/img_si_bg01.png')} alt="주요업무" />
-              </li>
-              <li>
-                <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무2에 대한 간략한 설명문구</span>
+                  <strong>종이해도</strong>
+                  <span>바다의 지형, 수심, 위험물 등 심볼로 표현</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg02.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무3에 대한 간략한 설명문구</span>
+                  <strong>전자해도</strong>
+                  <span>종이해도와 동일한 정보를 전자해도로 제작</span>
                 </div>
-                <img src={require('../../assets/images/sub/business/img_si_bg03.png')} alt="주요업무" />
+                <img src={require('../../assets/images/sub/business/img_si_bg01.png')} alt="주요업무" />
+              </li>
+              <li>
+                <div className={style['text-box']}>
+                  <strong>주제도</strong>
+                  <span></span>
+                </div>
+                <img src={require('../../assets/images/sub/business/img_si_bg01.png')} alt="주요업무" />
               </li>
             </ul>
           </div>

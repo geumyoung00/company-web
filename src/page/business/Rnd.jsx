@@ -9,10 +9,9 @@ export const ResearchDevelopment = () => {
           <h3 className={`${classes['section-title']} ${style['section-title']}`}>연구 개발 사업</h3>
           <div className={style.description}>
             <p>
-              고객과의 충분한 대화와 협의를 통해 요구사항을 파악하여 고객이 만족하는 시스템을 만들어가고 있습니다.
-              <br />
-              특히 해양분야, 공간정보분야에 대하여 많은 경험을 가지고 있으며 WEB시스템과 CS시스템에 대한 경험 또한두루
-              갖추고 있습니다.
+              기업부설 연구소 운영을 통해 대용량과학데이터, 빅데이터, 지능형 CCTV 등 다양한 분야에서 연구개발을 수행하고
+              있으며, 연구개발과제 및 자체 프로젝트를 통해 솔루션을 개발하고 특허출원 및 등록, 공인인증시험성적,
+              기술이전 등 사업화를 위해 노력하고 있습니다.
             </p>
           </div>
           <div className={style.lists}>
@@ -20,22 +19,22 @@ export const ResearchDevelopment = () => {
             <ul>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무1에 대한 간략한 설명문구</span>
+                  <strong>빅데이터 연구</strong>
+                  <span>기후변화 분석을 위한 해양분야 빅데이터 분석</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg01.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무2에 대한 간략한 설명문구</span>
+                  <strong>인공지능 연구</strong>
+                  <span>연안지역 CCTV 영상을 활용한 AI 솔루션 개발</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg02.png')} alt="주요업무" />
               </li>
               <li>
                 <div className={style['text-box']}>
-                  <strong>주요업무 1</strong>
-                  <span>주요업무3에 대한 간략한 설명문구</span>
+                  <strong>융함데이터 연구</strong>
+                  <span>예측모델, 실측데이터 등을 활용한 데이터 융합</span>
                 </div>
                 <img src={require('../../assets/images/sub/business/img_si_bg03.png')} alt="주요업무" />
               </li>

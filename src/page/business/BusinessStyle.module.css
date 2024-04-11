@@ -4,11 +4,13 @@
 
 .buesiness .description {
     font-size: 2rem;
+    word-break: keep-all;
 }
 
 .buesiness h4 {
     font-size: 2.5rem;
     font-weight: 600;
+    margin-bottom: 2rem;
 }
 
 .buesiness .lists {
@@ -23,10 +25,9 @@
 }
 
 .buesiness .lists ul li {
-    flex: 1 1 0;
+    flex: 1 1 1;
     flex-basis: calc(33.33% - 3rem);
     background: #111;
-    ;
 }
 
 .buesiness .lists ul li .text-box {
@@ -46,6 +47,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+    word-break: keep-all;
 }
 
 .buesiness .lists ul li .text-box strong::after {
