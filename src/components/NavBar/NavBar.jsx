@@ -30,7 +30,6 @@ const NavBar = () => {
     setSelectedNavItem(item)
     setSelectedDropdownItem(item.dropdownItems[0])
   }
-
   return (
     <div className={classes['nav-bar']}>
       <dl>

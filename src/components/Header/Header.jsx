@@ -5,6 +5,7 @@ import { ReactComponent as LogoColor } from '../../assets/svg/logoColor.svg'
 import { Toggle } from '../Toggle/Toggle'
 import { Link } from 'react-router-dom'
 import { NAV_ITEMS } from '../constants'
+import ScrollToTop from '../../action/scroll-to-top'
 
 const Header = () => {
   const [isHeaderActive, setIsHeaderActive] = useState(false)
@@ -17,6 +18,7 @@ const Header = () => {
 
   return (
     <>
+      <ScrollToTop />
       <div className={`${classes['header-wrap']} ${isHeaderActive ? classes.active : ''}`}>
         <header className={classes.header}>
           <h1 className={classes.logo}>

@@ -1,10 +1,10 @@
 import classes from './Main.module.css'
 import { Link } from 'react-router-dom'
-import { NAV_ITEMS } from '../components/constants'
-import { MainBusinessSlide } from '../components/SlickSlide/MainBusinessSlide'
+import { NAV_ITEMS } from '../../components/constants'
+import { MainBusinessSlide } from '../../components/SlickSlide/MainBusinessSlide'
 import { ReactComponent as Plus } from '../assets/svg/iconPlus.svg'
 import { useState } from 'react'
-import Responsive from '../components/SlickSlide/MainPerfomanceSlide'
+import Responsive from '../../components/SlickSlide/MainPerfomanceSlide'
 
 const Main = () => {
   const [seletedTopic, setSelectedTopic] = useState('')
@@ -19,6 +19,10 @@ const Main = () => {
           <h2>캐치프라이즈 문구 작성하기</h2>
         </div>
         <img src={require('../assets/images/main/img_main_visual.png')} alt="메인 회사소개" />
+        <div className={classes['mouse-icon']}>
+          <span>Scroll Down</span>
+          <i></i>
+        </div>
       </section>
       <section className={`${classes['h-auto']} ${classes['main-text-section']}`}>
         <div className={classes.inner}>

@@ -1,19 +1,5 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
 
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 *,
 body,
 html {
@@ -24,6 +10,8 @@ html {
   box-sizing: border-box;
   position: relative;
   color: #333;
+  padding: 0;
+  margin: 0;
 }
 
 a,
@@ -33,6 +21,12 @@ span {
   line-height: inherit;
   font-weight: inherit;
   color: inherit;
+  text-decoration: none;
+}
+
+a::active {
+  color: inherit;
+  text-align: none;
 }
 
 h1,
@@ -52,6 +46,36 @@ strong {
   font-size: inherit;
   line-height: inherit;
   color: inherit;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+&::-moz-focus-inner {
+  border: 0;
+  padding: 0;
 }
 
 .hide {

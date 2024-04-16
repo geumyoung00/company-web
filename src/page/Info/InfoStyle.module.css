@@ -91,7 +91,6 @@
     justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
-    overflow: hidden;
 }
 
 
@@ -138,6 +137,8 @@
 .history .lists .box:nth-child(even) {
     flex-direction: row-reverse;
     text-align: right;
+    margin-top: 6rem;
+    overflow: hidden;
 }
 
 .history .lists .box:nth-child(even) .img img {
@@ -173,6 +174,7 @@
     background: #0064d5;
     position: absolute;
     left: -40.5px;
+    top: -4rem;
     z-index: 1;
     transition: ease .2s;
 }
@@ -194,7 +196,7 @@
 
 .history .lists .box:nth-child(even) .year dt::before {
     left: auto;
-    right: -40.5px
+    right: -41px
 }
 
 .history .lists .box:nth-child(even) .year dt::after {
@@ -202,11 +204,15 @@
     right: -46px;
 }
 
-.history .lists.active .year dt::before {
-    height: 34rem;
+.history .year.active dt::before {
+    height: 24rem;
 }
 
-.history .lists.active .year dt::after {
+.history .box:nth-child(even) .year.active dt::before {
+    height: 36rem;
+}
+
+.history .year.active dt::after {
     background: #0064d5;
 }
 

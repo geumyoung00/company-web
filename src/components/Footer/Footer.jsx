@@ -1,5 +1,5 @@
-import classes from './Footer.module.css';
-import { ReactComponent as LogoFooter } from '../../assets/svg/logoFooter.svg';
+import classes from './Footer.module.css'
+import { ReactComponent as LogoFooter } from '../../assets/svg/logoFooter.svg'
 
 const Footer = () => {
   return (
@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
