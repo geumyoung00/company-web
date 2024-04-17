@@ -1,15 +1,17 @@
-import { useState } from 'react'
 import classes from './BoardTab.module.css'
 import { Link } from 'react-router-dom'
 import { NAV_ITEMS } from '../../components/constants/NAV_ITEMS'
 import { useLocation } from 'react-router-dom'
+import { useState } from 'react'
 
-const BoardTab = ({ filterItemHandler }) => {
+const BoardTab = () => {
   const location = useLocation()
   const { pathname } = location
-  const path = pathname.split('/')[1]
+  const path1 = pathname.split('/')[2]
+  const [checkTab, setCheckTab] = useState('all')
+
   let names = []
-  if (path === 'recruit') {
+  if (path1 === 'recruitNotice') {
     names = [
       { en: 'open', kr: '모집 중' },
       { en: 'close', kr: '모집 마감' },
@@ -18,10 +20,8 @@ const BoardTab = ({ filterItemHandler }) => {
     names = NAV_ITEMS.find(item => item.en === 'business').dropdownItems
   }
   const navItems = [{ en: 'all', kr: '전체' }, ...names]
-
-  const [activText, setActiveText] = useState('all')
-  function tabHandler(tabName) {
-    setActiveText(tabName)
+  const checkTabHandler = tabName => {
+    setCheckTab(tabName)
   }
 
   return (
@@ -30,11 +30,19 @@ const BoardTab = ({ filterItemHandler }) => {
         {navItems.map(item => {
           return (
             <Link
-              className={`${classes.btn} ${item.en === activText ? classes.active : ''}`}
+              className={`${classes.btn} ${item.en === checkTab ? classes.active : ''}`}
               key={item.en}
+              to={
+                path1 === 'recruitNotice'
+                  ? item.en === 'all'
+                    ? `/recruit/recruitNotice`
+                    : `/recruit/recruitNotice/${item.en}`
+                  : item.en === 'all'
+                  ? `/performance/all/`
+                  : `/performance/all/${item.en}`
+              }
               onClick={() => {
-                tabHandler(item.en)
-                filterItemHandler(item.en)
+                checkTabHandler(item.en)
               }}
             >
               <span>{item.kr}</span>

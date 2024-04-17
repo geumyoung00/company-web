@@ -5,7 +5,8 @@
 .inner {
     display: block;
     width: 74vw;
-    margin: 12rem auto;
+    margin: 12rem auto 0;
+    padding-bottom: 31rem;
 }
 
 .inner section.grid {

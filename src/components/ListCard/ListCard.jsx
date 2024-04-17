@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { ReactComponent as LineArrow } from '../../assets/svg/iconLineArrow.svg'
 import classes from './ListCard.module.css'
 import { Link } from 'react-router-dom'
@@ -7,6 +7,9 @@ const ListCard = ({ item, items }) => {
   const location = useLocation()
   const { pathname } = location
   const path = pathname.split('/')[2]
+
+  const params = useParams()
+  const { tab } = params
 
   return (
     <div className={classes.item}>
@@ -28,7 +31,7 @@ const ListCard = ({ item, items }) => {
       </div>
       <Link
         className={classes['href-item']}
-        to={`/performance/${path}/${item.id}`}
+        to={!tab ? `/performance/${path}/detail/${item.id}` : `/performance/${path}/${tab}/detail/${item.id}`}
         state={{ items: items }}
         alt="게시글 상세보기"
       >

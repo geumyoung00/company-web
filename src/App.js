@@ -87,11 +87,16 @@ function App() {
           element: <AllPerform />,
         },
         {
-          path: 'major/:id',
+          path: 'all/:tab',
+          index: true,
+          element: <AllPerform />,
+        },
+        {
+          path: 'all/detail/:id',
           element: <PerformDetail />,
         },
         {
-          path: 'all/:id',
+          path: 'all/:tab/detail/:id',
           element: <PerformDetail />,
         },
       ],
@@ -112,6 +117,11 @@ function App() {
         },
         {
           path: 'recruitNotice',
+          index: true,
+          element: <RecruitmentNotice />,
+        },
+        {
+          path: 'recruitNotice/:tab',
           index: true,
           element: <RecruitmentNotice />,
         },

@@ -2,26 +2,29 @@ import classes from '../common.module.css'
 import style from './PerformanceStyle.module.css'
 import ListCard from '../../components/ListCard/ListCard'
 import BoardTab from '../../components/BoardTab/BoardTab'
-import { PERFORMANCE_ITEMS } from '../../components/constants/PERFORMANCE_ITEMS'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { PERFORMANCE_ITEMS } from './../../components/constants/PERFORMANCE_ITEMS'
 
 export const AllPerform = () => {
   const [filterItems, setFilterItems] = useState(PERFORMANCE_ITEMS)
-  function filterItemHandler(tabName) {
-    if (tabName === 'all') {
-      setFilterItems(PERFORMANCE_ITEMS)
-    } else {
-      const items = PERFORMANCE_ITEMS.filter(item => item.labelEn === tabName)
+  const params = useParams()
+  const { tab } = params
+
+  useEffect(() => {
+    if (!tab) setFilterItems(PERFORMANCE_ITEMS)
+    else {
+      const items = PERFORMANCE_ITEMS.filter(item => item.labelEn === tab)
       setFilterItems(items)
     }
-  }
+  }, [tab])
 
   return (
     <div className={`${classes['contents-wrap']} ${style.performance}  ${style['all-perform']}`}>
       <div className={classes.inner}>
         <section>
           <h3 className={'hide'}>주요실적</h3>
-          <BoardTab filterItemHandler={filterItemHandler} />
+          <BoardTab />
           <div className={style.lists}>
             {filterItems.map(item => (
               <ListCard item={item} key={item.id} items={filterItems} />
