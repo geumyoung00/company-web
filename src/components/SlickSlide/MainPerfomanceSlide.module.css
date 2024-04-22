@@ -4,6 +4,10 @@
     white-space: nowrap;
 }
 
+.carousel:hover {
+    cursor: pointer
+}
+
 .carousel .item {
     height: 44rem;
     transition: ease .4s;
@@ -108,10 +112,11 @@
     transform: translateY(0);
 }
 
-.carousel .item:hover .item-text a.more:hover svg {
+.carousel .item:hover .item-text a.more svg {
     animation-name: rolling;
     animation-duration: .4s;
     animation-delay: .2s;
+    animation-iteration-count: 2;
 }
 
 @keyframes rolling {
@@ -120,7 +125,7 @@
     }
 
     50% {
-        transform: translateX(40%);
+        transform: translateX(50%);
     }
 
     100% {

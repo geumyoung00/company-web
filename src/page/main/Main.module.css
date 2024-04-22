@@ -12,7 +12,6 @@
     z-index: -1;
 }
 
-
 .main section {
     width: 100%;
     height: 100vh;
@@ -165,6 +164,7 @@
 .business .inner {
     align-content: flex-start;
     padding: 15rem 0;
+    position: initial;
 }
 
 .business h3 {
@@ -180,17 +180,19 @@
 .business dl {
     display: flex;
     flex-direction: column;
-    grid-gap: 3rem;
     grid-column: 1/6;
+    position: initial;
+}
+
+.business dl dd {
+    position: initial;
 }
 
 .business .topic-box {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
     grid-column-gap: 2rem;
-    padding: 1rem 0;
-    opacity: .6;
+    padding: 2.4rem 0;
+    position: initial;
 }
 
 .business .topic-box .topic {
@@ -233,6 +235,10 @@
     opacity: 0;
 }
 
+.business .topic-box:hover .docker>p.hover-hide {
+    opacity: 1;
+}
+
 .business .topic-box .docker i {
     width: 0;
     height: 0;
@@ -244,13 +250,15 @@
 }
 
 .business .topic-img {
-    grid-column: 6/13;
-    width: 56vw;
-    height: calc(100vh - 30rem);
-    background-size: cover;
+    width: 80%;
+    max-width: 1100px;
+    height: 650px;
     position: absolute;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 1;
+    transition: ease .3s;
     overflow: hidden;
 }
 
@@ -276,12 +284,29 @@
     height: 100%;
 }
 
-.business .topic-box:hover .docker>p.hover-hide {
-    opacity: 0;
+.business .topic-box:hover .topic-img {
+    z-index: 10;
 }
 
-.business .topic-box:hover .docker>p.hover-hide {
-    opacity: 1;
+.business .topic-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.business .topic-box:hover .topic-img img {
+    animation: imgHover;
+    animation-duration: .15s;
+}
+
+@keyframes imgHover {
+    0% {
+        opacity: .6;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .major .inner {
@@ -463,4 +488,48 @@ section.recruit h3 {
 .recruit .right dd a:hover {
     opacity: 1;
     box-shadow: 0 0 6px 0 rgba(51, 51, 51, 0.26);
+}
+
+@media (max-width: 320px) {
+    .main .inner {
+        width: calc(100% - 3rem);
+        margin: 0 1.5rem;
+        padding: 0;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1.5rem;
+    }
+
+    .main_vs .inner {
+        height: calc(100vh - 6.8rem);
+    }
+
+    .main_vs h2 {
+        grid-column: 1/4;
+        margin: 12rem 3rem auto;
+        font-size: 4rem;
+        text-align: center;
+        word-break: keep-all;
+    }
+
+    .main-text-section .inner p {
+        grid-column: 1/4;
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    .main-text-section .inner p br {
+        display: none;
+    }
+
+    .main-text-section .inner p strong {
+        font-size: 3rem;
+    }
+
+    .main section h3 {
+        font-size: 3rem;
+    }
+
+    .business hr {
+        display: none;
+    }
 }

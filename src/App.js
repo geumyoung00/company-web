@@ -82,6 +82,10 @@ function App() {
           element: <MajorPerform />,
         },
         {
+          path: 'major/detail/:id',
+          element: <PerformDetail />,
+        },
+        {
           path: 'all',
           index: true,
           element: <AllPerform />,

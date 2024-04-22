@@ -16,15 +16,18 @@ export const PerformDetail = () => {
 
   let findItemIdx = items.findIndex(item => item.id === id)
   let navigateItem = {}
+
   const navigateHandler = state => {
     if (state === 'prev') {
       findItemIdx--
       navigateItem = items[findItemIdx]
+
       if (!navigateItem) {
         alert('처음 글입니다.')
         navigate(`/performance/${path}`)
+        console.log(navigateItem)
       } else {
-        navigate(`/performance/${path}/${navigateItem.id}`)
+        navigate(`/performance/${path}/detail/${navigateItem.id}`)
       }
     } else if (state === 'next') {
       findItemIdx++
@@ -33,7 +36,7 @@ export const PerformDetail = () => {
         alert('마지막 글입니다.')
         navigate(`/performance/${path}`)
       } else {
-        navigate(`/performance/${path}/${navigateItem.id}`)
+        navigate(`/performance/${path}/detail/${navigateItem.id}`)
       }
     } else {
       navigate(`/performance/${path}`)

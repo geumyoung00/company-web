@@ -13,7 +13,7 @@ export const History = () => {
       const windowHeight = window.innerHeight
       elements.forEach((dl, index) => {
         const rect = dl.getBoundingClientRect()
-        if (rect.bottom <= windowHeight && 120 > rect.top) {
+        if (rect.bottom <= windowHeight && 480 > rect.top) {
           setActiveIndexes(prevIndexes => [...prevIndexes, index])
         } else {
           setActiveIndexes(prevIndexes => prevIndexes.filter(i => i !== index))
