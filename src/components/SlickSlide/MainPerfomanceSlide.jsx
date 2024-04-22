@@ -4,6 +4,16 @@ import './slick-theme.css'
 import classes from './MainPerfomanceSlide.module.css'
 import { ReactComponent as LineArrow } from '../../assets/svg/iconLineArrow.svg'
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props
+  return <div className={`${classes['carousel-arrow']} ${classes.next}`} onClick={onClick} />
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props
+  return <div className={`${classes['carousel-arrow']} ${classes.prev}`} onClick={onClick} />
+}
+
 const Responsive = () => {
   var settings = {
     dots: false,
@@ -14,7 +24,6 @@ const Responsive = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    cssEase: 'linear',
     responsive: [
       {
         breakpoint: 1024,
@@ -36,8 +45,14 @@ const Responsive = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.1,
           slidesToScroll: 1,
+          autoplay: true,
+          pauseOnHover: false,
+          autoplaySpeed: 2000,
+          arrows: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
     ],

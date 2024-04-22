@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ReactPageScroller, { SectionContainer } from 'react-page-scroller'
 import Header from '../../components/Header/Header'
@@ -10,9 +10,15 @@ import { NAV_ITEMS } from '../../components/constants'
 
 export const Main = () => {
   const [isCrrentPage, setCrrentPage] = useState(0)
+  const [innerWidth, setInnerWidth] = useState(null)
+
   const handlePageChange = number => {
     setCrrentPage(number)
   }
+
+  useEffect(() => {
+    setInnerWidth(window.innerWidth)
+  }, [innerWidth])
 
   return (
     <>
@@ -29,7 +35,7 @@ export const Main = () => {
               <i></i>
             </div>
           </section>
-          <SectionContainer height={55}>
+          <SectionContainer height={innerWidth < 431 ? 30 : 55}>
             <section className={`${classes['h-auto']} ${classes['main-text-section']}`}>
               <div className={classes.inner}>
                 <p>
@@ -42,34 +48,36 @@ export const Main = () => {
               </div>
             </section>
           </SectionContainer>
-          <section className={classes.business}>
-            <div className={classes.inner}>
-              <h3>BUSINESS</h3>
-              <hr />
-              <dl className={classes.topics}>
-                {NAV_ITEMS[1].dropdownItems.map(item => {
-                  return (
-                    <dd key={item.id}>
-                      <Link to={`/business/${item.en}`} className={`${classes['topic-box']}`}>
-                        <div className={classes.docker}>
-                          <p>{item.id}</p>
-                          <p className={classes['hover-hide']}>{item.id}</p>
-                          <i />
-                        </div>
-                        <div className={classes.topic}>
-                          <h4>{item.kr}</h4>
-                          <p>{item.desc}</p>
-                        </div>
-                        <div className={classes['topic-img']}>
-                          <img src={require(`../../assets/images/main/img_main_business_${item.id}.png`)} alt="1" />
-                        </div>
-                      </Link>
-                    </dd>
-                  )
-                })}
-              </dl>
-            </div>
-          </section>
+          <SectionContainer he>
+            <section className={classes.business}>
+              <div className={classes.inner}>
+                <h3>BUSINESS</h3>
+                <hr />
+                <dl className={classes.topics}>
+                  {NAV_ITEMS[1].dropdownItems.map(item => {
+                    return (
+                      <dd key={item.id}>
+                        <Link to={`/business/${item.en}`} className={`${classes['topic-box']}`}>
+                          <div className={classes.docker}>
+                            <p>{item.id}</p>
+                            <p className={classes['hover-hide']}>{item.id}</p>
+                            <i />
+                          </div>
+                          <div className={classes.topic}>
+                            <h4>{item.kr}</h4>
+                            <p>{item.desc}</p>
+                          </div>
+                          <div className={classes['topic-img']}>
+                            <img src={require(`../../assets/images/main/img_main_business_${item.id}.png`)} alt="1" />
+                          </div>
+                        </Link>
+                      </dd>
+                    )
+                  })}
+                </dl>
+              </div>
+            </section>
+          </SectionContainer>
           <SectionContainer height={86}>
             <section className={classes.major}>
               <div className={classes.inner}>

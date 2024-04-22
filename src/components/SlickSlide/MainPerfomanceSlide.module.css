@@ -140,3 +140,34 @@
 .carousel .item:hover .inner::after {
     transform: translateY(0%);
 }
+
+.carousel-arrow {
+    width: 3.6rem;
+    height: 3.6rem;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.carousel-arrow.prev {
+    right: 4rem;
+    background: paleturquoise;
+}
+
+.carousel-arrow.next {
+    background: forestgreen;
+}
+
+@media (max-width: 430px) {
+    .carousel {
+        width: 100%;
+        margin: 4rem 0;
+    }
+
+    .carousel .inner {
+        margin-right: 0rem;
+        width: calc(100% - 2rem);
+    }
+}
