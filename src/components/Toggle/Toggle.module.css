@@ -23,7 +23,8 @@
     overflow: hidden;
     position: absolute;
     right: 0;
-    top: calc(100% + 1rem)
+    top: calc(100% + 1rem);
+    z-index: 0;
 }
 
 .toggle ul {
@@ -73,6 +74,20 @@
     transition: ease 0.3s all;
 }
 
+@keyframes open-height-animation {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.toggle.open .toggle-items {
+    animation: open-height-animation 0.1s ease;
+}
+
 @keyframes open-animation {
     0% {
         transform: translateY(-200%);
@@ -85,6 +100,21 @@
 
 .toggle.open ul {
     animation: open-animation 0.5s ease;
+}
+
+@keyframes closed-height-animation {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-200%);
+    }
+}
+
+.toggle.closed .toggle-items {
+    animation: closed-height-animation 0.5s 0.5s ease;
+    animation-fill-mode: forwards;
 }
 
 @keyframes closed-animation {

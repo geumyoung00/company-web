@@ -142,32 +142,108 @@
 }
 
 .carousel-arrow {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
     width: 3.6rem;
     height: 3.6rem;
-
     position: absolute;
     right: 0;
-    top: 0;
+    top: -7.3rem;
     z-index: 10;
 }
 
+.carousel-arrow svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    transform: rotate(-90deg);
+    fill: #333;
+}
+
 .carousel-arrow.prev {
-    right: 4rem;
-    background: paleturquoise;
+    right: 4.8rem;
+    transform: rotate(180deg);
 }
 
-.carousel-arrow.next {
-    background: forestgreen;
-}
 
-@media (max-width: 430px) {
+@media (max-width: 1366px) {
     .carousel {
         width: 100%;
-        margin: 4rem 0;
+        margin: 4rem 0 0;
     }
 
     .carousel .inner {
         margin-right: 0rem;
-        width: calc(100% - 2rem);
+        width: calc(100% - 3rem);
+        background: transparent;
+        padding: 3rem;
+    }
+
+    .carousel .item {
+        height: 50rem;
+    }
+
+    .carousel .item-text h4 {
+        font-size: 2.6rem;
+    }
+
+    .carousel .item .item-text a.more {
+        margin-top: 2rem;
+        transform: translateY(0);
+    }
+
+    .carousel .item .item-text a.more svg {
+        animation: none;
+    }
+
+    .carousel .item .item-img img {
+        opacity: 1;
+    }
+
+    .carousel .item .inner::after {
+        transform: translateY(0);
+        background: linear-gradient(180deg, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .7) 100%)
+    }
+
+    .carousel .item-text p {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media (max-width: 1180px) {
+    .carousel .item {
+        height: 42rem;
+    }
+
+    .carousel-arrow svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .carousel-arrow svg {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .carousel-arrow.prev {
+        right: 3.6rem
+    }
+}
+
+@media (max-width: 430px) {
+    .carousel .item {
+        height: 52rem;
+    }
+
+    .carousel .item .item-text {
+        transform: translateY(-3.6rem);
+    }
+}
+
+@media (max-width:375px) {
+    .carousel .item {
+        height: 44rem;
     }
 }

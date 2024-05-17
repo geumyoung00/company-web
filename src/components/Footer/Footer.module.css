@@ -46,3 +46,58 @@
     font-weight: 300;
     margin-top: 1rem
 }
+
+@media (max-width:1180px) {
+    .inner {
+        width: calc(100% - 8rem);
+        margin: 0 4rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .inner {
+        width: calc(100% - 4rem);
+        margin: 0 2rem;
+        padding: 4rem 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-logo {
+        grid-column: 1/4;
+        margin-bottom: 2rem;
+    }
+
+    .info {
+        grid-column: 1/4;
+    }
+
+    .info dl {
+        display: flex;
+        flex-flow: row wrap;
+        grid-column-gap: 2rem;
+    }
+
+    .info dl dd:first-child {
+        width: 100%;
+    }
+
+    .info dl dd {
+        font-size: 1.3rem;
+        line-height: 1.6;
+    }
+
+    .copy {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .inner {
+        padding: 3rem 0;
+    }
+
+    .footer-logo svg {
+        height: 3.6rem;
+    }
+
+}

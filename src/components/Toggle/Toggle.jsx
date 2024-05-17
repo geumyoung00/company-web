@@ -14,6 +14,7 @@ export const Toggle = ({ children, isActive, isOnSubTop, selectedText }) => {
     setIsOpen(prev => (prev === 'open' ? 'closed' : 'open'))
     // setIsOpen('open')
   }
+
   useEffect(() => {
     function listener(e) {
       //모달 안을 클릭 했는지

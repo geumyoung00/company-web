@@ -3,15 +3,31 @@ import './slick.css'
 import './slick-theme.css'
 import classes from './MainPerfomanceSlide.module.css'
 import { ReactComponent as LineArrow } from '../../assets/svg/iconLineArrow.svg'
-
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props
-  return <div className={`${classes['carousel-arrow']} ${classes.next}`} onClick={onClick} />
-}
+import { ReactComponent as ArrowHead } from '../../assets/svg/iconSelecArrowHead.svg'
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props
-  return <div className={`${classes['carousel-arrow']} ${classes.prev}`} onClick={onClick} />
+  const { onClick } = props
+  return (
+    <div className={`${classes['carousel-arrow']} ${classes.prev}`} onClick={onClick}>
+      {' '}
+      <i>
+        <span className="hide">이전</span>
+        <ArrowHead />
+      </i>
+    </div>
+  )
+}
+
+function SampleNextArrow(props) {
+  const { onClick } = props
+  return (
+    <div className={`${classes['carousel-arrow']} ${classes.next}`} onClick={onClick}>
+      <i>
+        <span className="hide">다음</span>
+        <ArrowHead />
+      </i>
+    </div>
+  )
 }
 
 const Responsive = () => {
@@ -26,30 +42,55 @@ const Responsive = () => {
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1370,
         settings: {
+          swipe: false,
+          touchMove: false,
+          autoplay: false,
+          pauseOnHover: false,
+          autoplaySpeed: 2000,
+          arrows: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+        },
+      },
+      {
+        breakpoint: 1180,
+        settings: {
+          swipe: false,
+          touchMove: false,
+          dots: false,
+          infinite: false,
           slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+          slidesToScroll: 1,
+          arrows: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 600,
         settings: {
+          swipe: false,
+          touchMove: false,
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.1,
+          swipe: false,
+          touchMove: false,
+          infinite: true,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay: true,
+          autoplay: false,
           pauseOnHover: false,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 3000,
           arrows: true,
           nextArrow: <SampleNextArrow />,
           prevArrow: <SamplePrevArrow />,
