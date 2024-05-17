@@ -1,5 +1,6 @@
 export const NAV_ITEMS = [
   {
+    id: 0,
     en: 'info',
     kr: '회사소개',
     dropdownItems: [
@@ -10,6 +11,7 @@ export const NAV_ITEMS = [
     ],
   },
   {
+    id: 1,
     en: 'business',
     kr: '사업분야',
     dropdownItems: [
@@ -21,6 +23,7 @@ export const NAV_ITEMS = [
     ],
   },
   {
+    id: 2,
     en: 'performance',
     kr: '사업실적',
     dropdownItems: [
@@ -29,6 +32,7 @@ export const NAV_ITEMS = [
     ],
   },
   {
+    id: 3,
     en: 'recruit',
     kr: '인재채용',
     dropdownItems: [

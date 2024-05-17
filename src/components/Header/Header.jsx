@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import classes from './Header.module.css'
 import { ReactComponent as Logo } from '../../assets/svg/logo.svg'
 import { ReactComponent as LogoColor } from '../../assets/svg/logoColor.svg'
@@ -11,32 +11,28 @@ import ScrollToTop from '../../action/scroll-to-top'
 const Header = () => {
   const [isHeaderActive, setIsHeaderActive] = useState(false)
   const [innerWidth, setInnerWidth] = useState(null)
-  const [isDepthOpen, setIsDepthOpen] = useState(false)
-  const ref = useRef()
-  // const [subItems, setsubItems] = useState([])
-
-  useEffect(() => {
-    setInnerWidth(window.innerWidth)
-  }, [innerWidth])
+  const [showItem, setShowItem] = useState(null)
 
   const HeaderActiveHandler = () => {
     setIsHeaderActive(prev => !prev)
     if (isHeaderActive) {
       document.body.style.overflowY = ''
-      console.log('open 상태/ body overflow 없애줘')
     } else {
       document.body.style.overflowY = 'hidden'
-      console.log('open 상태/ body overflow hidden')
     }
   }
 
-  const depthOpenHandler = item => {
-    setIsDepthOpen(prev => !prev)
+  const depthOpenHandler = itemId => {
+    if (itemId === showItem) {
+      setShowItem(null)
+      return
+    }
+    setShowItem(itemId)
   }
 
-  const menuItem = NAV_ITEMS.map(item => {
-    return { en: item.en, kr: item.kr }
-  })
+  useEffect(() => {
+    setInnerWidth(window.innerWidth)
+  }, [innerWidth])
 
   const depthItem = NAV_ITEMS.map(item => item.dropdownItems)
 
@@ -74,88 +70,33 @@ const Header = () => {
             </div>
             <nav>
               <div className={classes['depth1-list']}>
-                {menuItem.map(item => {
-                  let idx = menuItem.findIndex(element => {
-                    return element.kr === item.kr
-                  })
+                {NAV_ITEMS.map(item => {
+                  const depth1 = item.en
 
                   return (
                     <div
-                      className={`${classes['depth1-menu']} ${isDepthOpen ? classes.open : ''}`}
-                      key={item.en}
-                      ref={ref}
+                      className={`${classes['depth1-menu']} ${showItem === item.id ? classes.open : ''}`}
+                      key={item.id}
                     >
-                      <button onClick={depthOpenHandler}>
+                      <button onClick={() => depthOpenHandler(item.id)}>
                         <span>{item.kr}</span>
                         <i></i>
                       </button>
-                      {/* <div className={classes['depth2-list']}>
+                      <div className={classes['depth2-list']}>
                         <ul>
-                          {depthItem[idx].map(item => {
+                          {item.dropdownItems.map(item => {
                             return (
                               <li className={classes['depth2-menu']} key={item.en}>
-                                <Link>{item.kr}</Link>
+                                <Link to={`/${depth1}/${item.en}`}>{item.kr}</Link>
                               </li>
                             )
                           })}
                         </ul>
-                      </div> */}
+                      </div>
                     </div>
                   )
                 })}
               </div>
-
-              {/* <div className={classes['depth1-list']}>
-                <div className={`${classes['depth1-menu']} ${isDepthOpen ? classes.open : ''}`}>
-                  <button onClick={depthOpenHandler.bind(null, menuItem[0])}>
-                    <span>{menuItem[0].kr}</span>
-                    <i></i>
-                  </button>
-                  <div className={classes['depth2-list']}>
-                    <ul>
-                      <li className={classes['depth2-menu']}>
-                        <Link>인사말</Link>
-                      </li>
-                      <li className={classes['depth2-menu']}>
-                        <Link>회사연혁</Link>
-                      </li>
-                      <li className={classes['depth2-menu']}>
-                        <Link>조직도</Link>
-                      </li>
-                      <li className={classes['depth2-menu']}>
-                        <Link>오시는 길</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className={`${classes['depth1-menu']}`}>
-                  <button onClick={depthOpenHandler.bind(null, menuItem[0])}>
-                    <span>{menuItem[1].kr}</span>
-                    <i></i>
-                  </button>
-                  <div className={classes['depth2-list']}>
-                    <ul></ul>
-                  </div>
-                </div>
-                <div className={`${classes['depth1-menu']}`}>
-                  <button>
-                    <span>{menuItem[2].kr}</span>
-                    <i></i>
-                  </button>
-                  <div className={classes['depth2-list']}>
-                    <ul></ul>
-                  </div>
-                </div>
-                <div className={`${classes['depth1-menu']}`}>
-                  <button>
-                    <span>{menuItem[3].kr}</span>
-                    <i></i>
-                  </button>
-                  <div className={classes['depth2-list']}>
-                    <ul></ul>
-                  </div>
-                </div>
-              </div> */}
             </nav>
           </div>
         </div>
