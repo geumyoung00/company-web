@@ -1,0 +1,69 @@
+.buesiness section h3.section-title {
+    margin-bottom: 4rem;
+}
+
+.buesiness .description {
+    font-size: 2rem;
+    word-break: keep-all;
+}
+
+.buesiness h4 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.buesiness .lists {
+    margin-top: 8rem;
+}
+
+.buesiness .lists ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    grid-column-gap: 4rem;
+}
+
+.buesiness .lists ul li {
+    flex: 1 1 1;
+    flex-basis: calc(33.33% - 3rem);
+    background: #111;
+}
+
+.buesiness .lists ul li .text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    grid-row-gap: 4.2rem;
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    width: 70%;
+    background: rgba(255, 255, 255, .9);
+    padding: 3rem 6rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    word-break: keep-all;
+}
+
+.buesiness .lists ul li .text-box strong::after {
+    display: block;
+    content: '';
+    width: 2rem;
+    height: 2px;
+    background: #0064d5;
+    margin: auto auto;
+    transform: translateY(2rem);
+}
+
+.buesiness .lists ul li .text-box span {
+    line-height: 1.3;
+}
+
+.buesiness .lists ul li img {
+    opacity: 0.7;
+}

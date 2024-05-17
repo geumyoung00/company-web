@@ -1,6 +1,6 @@
 .nav {
     display: flex;
-    height: 59vh;
+    height: 56vh;
     padding-top: 11rem;
     background-position: top center;
     background-size: cover;
@@ -21,20 +21,6 @@
     font-size: 6rem;
     font-weight: 700;
     margin: auto auto;
-}
-
-.nav.info {
-    background-image: url(/public/images/sub/bg_sub_top_01.png);
-}
-
-.nav.business {
-    background-image: url(/public/images/sub/bg_sub_top_01.png);
-}
-
-.nav.performance {
-    background-image: url(/public/images/sub/bg_sub_top_03.png);
-}
-
-.nav.recruitment {
-    background-image: url(/public/images/sub/bg_sub_top_04.png);
+    color: #fff;
+    ;
 }

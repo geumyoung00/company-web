@@ -30,6 +30,9 @@
 }
 
 .greeting-text {
+    display: flex;
+    flex-flow: column wrap;
+    grid-row-gap: 4rem;
     margin-left: 8rem;
 }
 
@@ -39,9 +42,327 @@
 
 }
 
+.greeting-text .signature {
+    display: flex;
+    align-items: baseline;
+    grid-column-gap: 2rem;
+    margin: 2rem 0;
+}
+
+.greeting-text .signature strong {
+    color: #333;
+    font-size: 3rem;
+    font-weight: 600
+}
 
 .greeting section hr {
     position: relative;
     width: 125%;
     margin: 6rem 0;
+}
+
+.history section p.section-title {
+    margin-bottom: 4rem;
+}
+
+.history h3 {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 10rem;
+}
+
+.history h3 strong {
+    color: #00c4ff;
+}
+
+.history .box-title {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2.2px;
+    color: #0064d5;
+    margin-bottom: 5rem;
+    padding-top: 2rem;
+}
+
+.history .lists .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+
+.history .lists .img,
+.history .lists .years {
+    width: calc(50% - 2rem);
+}
+
+.history .lists .img img {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+.history .lists .year {
+    padding: 4rem 0;
+    margin-left: 2rem;
+}
+
+.history .lists .year dt {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4rem
+}
+
+.history .lists .year dd {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.history .lists .year dd+dd {
+    margin-top: 2rem;
+}
+
+.history .lists .year dd strong {
+    display: inline-block;
+    width: 5rem;
+}
+
+.history .lists .box:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+    margin-top: 6rem;
+    overflow: hidden;
+}
+
+.history .lists .box:nth-child(even) .img img {
+    margin: 0 auto;
+    margin-right: 0;
+}
+
+.history .lists .box:nth-child(even) .year {
+    margin-left: 0;
+    margin-right: 2rem;
+}
+
+.history .lists .box:nth-child(even) .year dd {
+    flex-direction: row-reverse;
+}
+
+.history .lists .line {
+    width: 1px;
+    height: 100%;
+    background: #ddd;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.history .lists .year dt::before {
+    display: block;
+    content: '';
+    width: 1px;
+    height: 0;
+    background: #0064d5;
+    position: absolute;
+    left: -40.5px;
+    top: -4rem;
+    z-index: 1;
+    transition: ease .2s;
+}
+
+.history .lists .year dt::after {
+    display: block;
+    content: '';
+    width: 11px;
+    height: 11px;
+    background: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    left: -4.6rem;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: ease .2s;
+}
+
+.history .lists .box:nth-child(even) .year dt::before {
+    left: auto;
+    right: -41px
+}
+
+.history .lists .box:nth-child(even) .year dt::after {
+    left: auto;
+    right: -46px;
+}
+
+.history .year.active dt::before {
+    height: 24rem;
+}
+
+.history .box:nth-child(even) .year.active dt::before {
+    height: 36rem;
+}
+
+.history .year.active dt::after {
+    background: #0064d5;
+}
+
+.organization .chart {
+    display: block;
+    max-width: 96rem;
+    margin: 0 auto;
+}
+
+.chart::after {
+    display: block;
+    content: '';
+    width: 1px;
+    height: calc(100% - 10rem);
+    background: #ddd;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.chart .row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    grid-column-gap: 8rem;
+    grid-row-gap: 4rem;
+    margin-bottom: 12rem;
+}
+
+.chart .row.teams {
+    margin-bottom: 0;
+}
+
+.chart .row::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.chart .row:first-child::after {
+    display: none;
+}
+
+.chart .box {
+    display: block;
+    padding: 2rem;
+    background: #fff;
+}
+
+.chart .box.primary {
+    margin: 0 auto;
+}
+
+.chart .box.primary .text {
+    background: #0064d5;
+    color: #fff;
+}
+
+.chart .box.secondary .text {
+    background: #00c4ff;
+    color: #fff;
+}
+
+.chart .box .text {
+    width: 21rem;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    padding: 2.5rem 0;
+    background: #e8f1f4;
+}
+
+.location .wrap {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 4rem;
+    margin: 2rem 0;
+}
+
+.location .map {
+    grid-column: 1/9;
+    min-height: 26rem;
+    width: 100%;
+    height: calc(100% - 2rem);
+    background: goldenrod;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 0;
+}
+
+.location .info-box {
+    grid-column: 8/13;
+    background: #0064d5;
+    width: 100%;
+    color: #fff;
+    padding: 6rem;
+    margin-top: 2rem;
+}
+
+.location .info-box p {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 8rem;
+}
+
+.location .info-box p::after {
+    display: block;
+    content: '';
+    width: 4rem;
+    height: 1px;
+    background: #fff;
+    transform: translateY(4rem);
+    opacity: .8;
+}
+
+.location .info-box dl {
+    margin-bottom: 4rem;
+}
+
+.location .info-box dl * {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.location .info-box dl dt {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.location .info-box dl dd {
+    margin-bottom: 2rem;
+}
+
+.location .info-box dl dd strong {
+    display: inline-block;
+    width: 10rem;
+    font-weight: 500;
 }
