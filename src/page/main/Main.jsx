@@ -1,41 +1,46 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 import Responsive from '../../components/SlickSlide/MainPerfomanceSlide'
 import classes from './Main.module.css'
 import { ReactComponent as Plus } from '../../assets/svg/iconPlus.svg'
 import { NAV_ITEMS } from '../../components/constants'
 
 export const Main = () => {
-  const [innerWidth, setInnerWidth] = useState(null)
-  useEffect(() => {
-    setInnerWidth(window.innerWidth)
-  }, [innerWidth])
+  const visualImage = useRef()
+  const visualtext = useRef()
+
+  useGSAP(() => {
+    gsap.to(visualImage.current, { scale: '1.0', opacity: '.6', duration: 2 })
+    gsap.to(visualtext.current, { translateY: '0', opacity: '1', duration: 2 })
+  })
 
   return (
     <>
       <div className={classes.main}>
-        <section id="mainVs" className={classes.main_vs}>
+        <section className={classes['main-vs']}>
           <div className={classes.inner}>
-            <h2>캐치프라이즈 문구 작성하기</h2>
+            <h2 ref={visualtext}>메인 슬로건 문구 작성</h2>
           </div>
-          <img src={require('../../assets/images/main/img_main_visual.png')} alt="메인 회사소개" />
+          <img ref={visualImage} src={require('../../assets/images/main/img_main_visual.png')} alt="메인 회사소개" />
           <div className={classes['mouse-icon']}>
-            <span>Scroll Down</span>
+            {/* <span>Scroll</span> */}
             <i></i>
           </div>
         </section>
-        <section className={`${classes['h-auto']} ${classes['main-text-section']}`}>
+        <section className={`${classes['text-section']}`}>
           <div className={classes.inner}>
             <p>
               <strong>ELECOCEAN</strong>
             </p>
             <p>
-              일렉오션은 다양한 경험을 보유한 해양전문기업으로
-              <br /> 더 나은 미래형 해양기술을 선도합니다.
+              해양 기술 산업의 다양한 경험으로
+              <br /> 미래형 해양기술을 선도합니다.
             </p>
           </div>
         </section>
-        <section className={classes.business}>
+        {/* <section className={classes.business}>
           <div className={classes.inner}>
             <h3>BUSINESS</h3>
             <hr />
@@ -43,10 +48,9 @@ export const Main = () => {
               {NAV_ITEMS[1].dropdownItems.map(item => {
                 return (
                   <dd key={item.id}>
-                    <Link to={`/business/${item.en}`} className={`${classes['topic-box']}`}>
+                    <div className={`${classes['topic-box']}`}>
                       <div className={classes.docker}>
                         <p>{item.id}</p>
-                        <p className={classes['hover-hide']}>{item.id}</p>
                         <i />
                       </div>
                       <div className={classes.topic}>
@@ -56,20 +60,26 @@ export const Main = () => {
                       <div className={classes['topic-img']}>
                         <img src={require(`../../assets/images/main/img_main_business_${item.id}.png`)} alt="1" />
                       </div>
-                    </Link>
+                      <Link to={`/business/${item.en}`}>
+                        <span>View more</span>
+                        <div className={classes.icon}>
+                          <i></i>
+                        </div>
+                      </Link>
+                    </div>
                   </dd>
                 )
               })}
             </dl>
           </div>
-        </section>
-        <section className={classes.major}>
+        </section> */}
+        {/* <section className={classes.major}>
           <div className={classes.inner}>
             <h3>주요실적</h3>
             <Responsive />
           </div>
-        </section>
-        <section className={`${classes.recruit}`}>
+        </section> */}
+        {/* <section className={`${classes.recruit}`}>
           <div className={classes.inner}>
             <div className={classes.box}>
               <div className={classes.left}>
@@ -132,7 +142,7 @@ export const Main = () => {
           <div className={classes['main-bg']}>
             <img src={require('../../assets/images/main/img_main_bg.png')} alt="" />
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   )

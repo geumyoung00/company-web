@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import classes from './Header.module.css'
 import { ReactComponent as Logo } from '../../assets/svg/logo.svg'
 import { ReactComponent as LogoColor } from '../../assets/svg/logoColor.svg'
@@ -10,15 +10,15 @@ import ScrollToTop from '../../action/scroll-to-top'
 
 const Header = () => {
   const [isHeaderActive, setIsHeaderActive] = useState(false)
-  const [innerWidth, setInnerWidth] = useState(null)
   const [showItem, setShowItem] = useState(null)
 
   const HeaderActiveHandler = () => {
     setIsHeaderActive(prev => !prev)
+    setShowItem(null)
     if (isHeaderActive) {
       document.body.style.overflowY = ''
     } else {
-      document.body.style.overflowY = 'hidden'
+      window.innerWidth <= 1366 ? (document.body.style.overflowY = 'hidden') : (document.body.style.overflowY = '')
     }
   }
 
@@ -30,16 +30,72 @@ const Header = () => {
     setShowItem(itemId)
   }
 
-  useEffect(() => {
-    setInnerWidth(window.innerWidth)
-  }, [innerWidth])
-
   const depthItem = NAV_ITEMS.map(item => item.dropdownItems)
 
   return (
     <>
       <ScrollToTop />
-      {innerWidth <= 1366 ? (
+      <div className={`${classes['header-wrap']} ${isHeaderActive ? classes.open : ''}`}>
+        <header className={classes.header}>
+          <h1 className={classes.logo}>
+            <Link to="/" title="일렉오션">
+              <span className="hide">일렉오션</span>
+              <Logo />
+            </Link>
+          </h1>
+          <div className={classes['menu-button']}>
+            <button className={isHeaderActive ? classes.close : ''} onClick={HeaderActiveHandler}>
+              <p className="hide">전체메뉴</p>
+              <div className={classes['menu-icon']}>
+                <i className={`${classes.line} ${classes['line-1']}`}></i>
+                <i className={`${classes.line} ${classes['line-2']}`}></i>
+                <i className={`${classes.line} ${classes['line-3']}`}></i>
+              </div>
+            </button>
+          </div>
+        </header>
+        <div className={`${classes['menu-wrap']}`}>
+          <div className={classes['language']}>
+            <Link>
+              Supporting english
+              <i>
+                <ArrowHead />
+              </i>
+            </Link>
+          </div>
+          <nav>
+            <div className={classes['depth1-list']}>
+              {NAV_ITEMS.map(item => {
+                const depth1 = item.en
+
+                return (
+                  <div
+                    className={`${classes['depth1-menu']} ${showItem === item.id ? classes.open : ''}`}
+                    key={item.id}
+                  >
+                    <button onClick={() => depthOpenHandler(item.id)}>
+                      <span>{item.kr}</span>
+                      <i></i>
+                    </button>
+                    <div className={classes['depth2-list']}>
+                      <ul>
+                        {item.dropdownItems.map(item => {
+                          return (
+                            <li className={classes['depth2-menu']} key={item.en}>
+                              <Link to={`/${depth1}/${item.en}`}>{item.kr}</Link>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </nav>
+        </div>
+      </div>
+      {/* {window.innerWidth <= 1366 ? (
         <div className={`${classes['media-header-wrap']} ${isHeaderActive ? classes.open : ''}`}>
           <header className={classes.header}>
             <h1 className={classes.logo}>
@@ -62,7 +118,7 @@ const Header = () => {
           <div className={`${classes['menu-wrap']}`}>
             <div className={classes['language']}>
               <Link>
-                English is here
+                Supporting english
                 <i>
                   <ArrowHead />
                 </i>
@@ -201,7 +257,7 @@ const Header = () => {
             ></div>
           </header>
         </div>
-      )}
+      )} */}
     </>
   )
 }
