@@ -1,36 +1,151 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Responsive from '../../components/SlickSlide/MainPerfomanceSlide'
 import classes from './Main.module.css'
 import { ReactComponent as Plus } from '../../assets/svg/iconPlus.svg'
+import { ReactComponent as LineArrow } from '../../assets/svg/iconLineArrow.svg'
 import { NAV_ITEMS } from '../../components/constants'
+gsap.registerPlugin(ScrollTrigger)
 
 export const Main = () => {
-  const visualImage = useRef()
-  const visualtext = useRef()
+  const viewPort = { isMobile: '(min-width:320px)', isPort: '(min-width: 768px)', isDesktop: '(min-width: 1366px)' }
+  let businessMm = gsap.matchMedia()
+
+  const businessRef = useRef()
+  const sectionRef = useRef([])
 
   useGSAP(() => {
-    gsap.to(visualImage.current, { scale: '1.0', opacity: '.6', duration: 2 })
-    gsap.to(visualtext.current, { translateY: '0', opacity: '1', duration: 2 })
+    gsap.from(sectionRef.current[0], { scale: '1.1', opacity: '0', translateY: '4rem', duration: 1.4 })
+    gsap.from(sectionRef.current[1], { scale: '1.2', opacity: '.7', duration: 1.2 })
+    gsap.from(sectionRef.current[2], { opacity: '0', translateY: '-1rem', duration: 1, delay: 1.5 })
+    gsap.from(
+      '.box p',
+      {
+        scale: 1.4,
+        duration: 2,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: '.box p',
+          toggleActions: 'resume pause reset pause',
+          start: '-100% 70%',
+          end: '300% 70%',
+          scrub: 2,
+        },
+      },
+      { scope: sectionRef.current[3] },
+    )
+
+    gsap.from(sectionRef.current[4], {
+      translateY: '50%',
+      opacity: 0,
+      scrollTrigger: {
+        trigger: sectionRef.current[4],
+        start: '-50% 55%',
+        end: '-25% 55%',
+        scrub: 2,
+      },
+    })
+
+    gsap.from(sectionRef.current[5], {
+      opacity: 0,
+      translateY: '50%',
+      scrollTrigger: {
+        trigger: sectionRef.current[5],
+        start: '-50% 85%',
+        end: '0% 85%',
+        scrub: 2,
+      },
+    })
   })
+
+  useGSAP(
+    () => {
+      businessMm.add(viewPort, context => {
+        let { isIpad, isDesktop } = context.conditions
+        const topics = gsap.utils.toArray('dd')
+
+        gsap.from('h3', {
+          translateX: '-100%',
+          opacity: 0,
+          duration: 2,
+          scrollTrigger: { trigger: 'h3', start: 'center 75%', end: 'center 75%', scrub: 2 },
+        })
+
+        isDesktop
+          ? gsap.from('dd', {
+              opacity: 0,
+              duration: 10,
+              scrollTrigger: { trigger: '.topic', markers: true, scrub: 2, start: 'top 70%', end: 'bottom 80%' },
+            })
+          : isIpad
+          ? topics.forEach(topic => {
+              gsap.from(topic, {
+                translateY: '50%',
+                opacity: 0,
+                scrollTrigger: {
+                  trigger: topic,
+                  start: '-45% 80%',
+                  end: '10% 65%',
+                  scrub: 2,
+                },
+              })
+            })
+          : topics.forEach(topic => {
+              gsap.from(topic, {
+                translateY: '50%',
+                opacity: 0,
+                scrollTrigger: {
+                  trigger: topic,
+                  start: '-45% 80%',
+                  end: '10% 65%',
+                  scrub: 2,
+                },
+              })
+            })
+      })
+    },
+    { scope: businessRef },
+  )
 
   return (
     <>
       <div className={classes.main}>
         <section className={classes['main-vs']}>
-          <div className={classes.inner}>
-            <h2 ref={visualtext}>메인 슬로건 문구 작성</h2>
+          <div
+            ref={context => {
+              sectionRef.current[0] = context
+            }}
+            className={classes.inner}
+          >
+            <h2>메인 슬로건 문구 작성</h2>
           </div>
-          <img ref={visualImage} src={require('../../assets/images/main/img_main_visual.png')} alt="메인 회사소개" />
-          <div className={classes['mouse-icon']}>
-            {/* <span>Scroll</span> */}
+          <img
+            ref={context => {
+              sectionRef.current[1] = context
+            }}
+            src={require('../../assets/images/main/img_main_visual.png')}
+            alt="메인 회사소개"
+          />
+          <div
+            ref={context => {
+              sectionRef.current[2] = context
+            }}
+            className={classes['mouse-icon']}
+          >
+            <span>Scroll</span>
             <i></i>
           </div>
         </section>
-        <section className={`${classes['text-section']}`}>
-          <div className={classes.inner}>
+        <section
+          ref={context => {
+            sectionRef.current[3] = context
+          }}
+          className={`${classes['text-section']}`}
+        >
+          <div className={`${classes.inner} ${'box'}`}>
             <p>
               <strong>ELECOCEAN</strong>
             </p>
@@ -40,7 +155,7 @@ export const Main = () => {
             </p>
           </div>
         </section>
-        {/* <section className={classes.business}>
+        <section ref={businessRef} className={`${classes.business}`}>
           <div className={classes.inner}>
             <h3>BUSINESS</h3>
             <hr />
@@ -60,37 +175,43 @@ export const Main = () => {
                       <div className={classes['topic-img']}>
                         <img src={require(`../../assets/images/main/img_main_business_${item.id}.png`)} alt="1" />
                       </div>
-                      <Link to={`/business/${item.en}`}>
-                        <span>View more</span>
-                        <div className={classes.icon}>
-                          <i></i>
-                        </div>
-                      </Link>
                     </div>
+                    <Link to={`/business/${item.en}`}>
+                      <span>View more</span>
+                      <div className={classes.icon}>
+                        <LineArrow />
+                      </div>
+                    </Link>
                   </dd>
                 )
               })}
             </dl>
           </div>
-        </section> */}
-        {/* <section className={classes.major}>
-          <div className={classes.inner}>
+        </section>
+        <section className={classes.major}>
+          <div
+            ref={context => {
+              sectionRef.current[4] = context
+            }}
+            className={classes.inner}
+          >
             <h3>주요실적</h3>
             <Responsive />
           </div>
-        </section> */}
-        {/* <section className={`${classes.recruit}`}>
+        </section>
+        <section className={`${classes.recruit}`}>
           <div className={classes.inner}>
-            <div className={classes.box}>
+            <div ref={context => (sectionRef.current[5] = context)} className={classes.box}>
               <div className={classes.left}>
                 <dl>
                   <dt>
-                    <h3>인재채용</h3>
+                    <h3>인재 채용</h3>
                     <p>일렉오션과 함께 성장할 소중한 인재를 기다립니다.</p>
                   </dt>
                   <dd>
                     <a href="/">
-                      <h4>복지문화</h4>
+                      <h4>복지 문화</h4>
+                      <p></p>
                       <i className={classes['icon-plus']}>
                         <Plus />
                       </i>
@@ -98,7 +219,7 @@ export const Main = () => {
                   </dd>
                   <dd>
                     <a href="/">
-                      <h4>채용안내</h4>
+                      <h4>채용 안내</h4>
                       <i className={classes['icon-plus']}>
                         <Plus />
                       </i>
@@ -109,7 +230,7 @@ export const Main = () => {
               <div className={classes.right}>
                 <dl>
                   <dt>
-                    <h3>채용공고</h3>
+                    <h3>채용 공고</h3>
                   </dt>
                   <dd>
                     <a href="/">
@@ -139,10 +260,10 @@ export const Main = () => {
               </div>
             </div>
           </div>
-          <div className={classes['main-bg']}>
-            <img src={require('../../assets/images/main/img_main_bg.png')} alt="" />
-          </div>
-        </section> */}
+        </section>
+        <div className={classes['main-bg']}>
+          <img src={require('../../assets/images/main/img_main_bg.png')} alt="" />
+        </div>
       </div>
     </>
   )

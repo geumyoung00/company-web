@@ -90,3 +90,7 @@ button {
   width: 100vw;
   overflow: hidden;
 }
+
+#root {
+  overflow: hidden;
+}

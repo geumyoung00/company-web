@@ -32,54 +32,7 @@ function SampleNextArrow(props) {
 
 const Responsive = () => {
   var settings = {
-    dots: false,
-    arrows: false,
-    infinite: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
     responsive: [
-      {
-        breakpoint: 1370,
-        settings: {
-          swipe: false,
-          touchMove: false,
-          autoplay: false,
-          pauseOnHover: false,
-          autoplaySpeed: 2000,
-          arrows: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
-      {
-        breakpoint: 1180,
-        settings: {
-          swipe: false,
-          touchMove: false,
-          dots: false,
-          infinite: false,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          arrows: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          swipe: false,
-          touchMove: false,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-        },
-      },
       {
         breakpoint: 480,
         settings: {
@@ -88,9 +41,9 @@ const Responsive = () => {
           infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay: false,
+          autoplay: true,
           pauseOnHover: false,
-          autoplaySpeed: 3000,
+          autoplaySpeed: 4000,
           arrows: true,
           nextArrow: <SampleNextArrow />,
           prevArrow: <SamplePrevArrow />,
@@ -108,8 +61,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -123,8 +78,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -138,8 +95,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -153,8 +112,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -168,8 +129,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -183,8 +146,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>

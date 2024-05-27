@@ -10,7 +10,11 @@ const Footer = () => {
         </p>
         <div className={classes.info}>
           <dl>
-            <dd>부산광역시 해운대구 센텀동로 35, 3층 308호 (우동, 센텀SH밸리)</dd>
+            <dd>
+              부산광역시 해운대구 센텀동로 35, 3층 308호
+              <br />
+              (우동, 센텀SH밸리)
+            </dd>
             <dd>
               <a href="tel:8207082288116">TEL. 070-8228-8116</a>
             </dd>
