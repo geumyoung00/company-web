@@ -1,4 +1,10 @@
 @media (min-width: 320px) {
+
+    .nav-wrap,
+    .res-logo {
+        display: none;
+    }
+
     .header-wrap {
         width: 100%;
         position: absolute;
@@ -100,14 +106,14 @@
         transition: top .2s ease .2s, transform .2s ease .4s, background .2s ease .4s;
     }
 
-    .header-wrap .language {
+    .language {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         height: 6.8rem;
     }
 
-    .header-wrap .language a {
+    .language a {
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -116,7 +122,7 @@
         height: 4rem;
     }
 
-    .header-wrap .language a i {
+    .language a i {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -128,14 +134,18 @@
         background: #333;
     }
 
-    .header-wrap .language a i svg {
+    .language a i svg {
         width: 7px;
         height: 9px;
         transform: rotate(-90deg) translateY(1px);
         fill: #fff;
     }
 
-    .menu-wrap {
+    .header .language {
+        display: none;
+    }
+
+    .res-nav-wrap {
         display: block;
         width: 100%;
         height: 100vh;
@@ -149,11 +159,11 @@
         padding: 0 2rem;
     }
 
-    .open .menu-wrap {
+    .open .res-nav-wrap {
         left: 0;
     }
 
-    .menu-wrap nav {
+    .res-nav-wrap nav {
         margin: 2rem 0;
     }
 
@@ -176,7 +186,7 @@
         font-weight: 600;
     }
 
-    .open .menu-wrap .depth1-list .depth1-menu button::before {
+    .open .res-nav-wrap .depth1-list .depth1-menu button::before {
         display: block;
         content: '';
         width: 1.8rem;
@@ -190,7 +200,7 @@
         transition: ease .3s left;
     }
 
-    .open .menu-wrap .depth1-list .open.depth1-menu button::before {
+    .open .res-nav-wrap .depth1-list .open.depth1-menu button::before {
         left: -2.9rem;
     }
 
@@ -259,4 +269,333 @@
         width: 100%;
         text-indent: .2rem;
     }
+}
+
+
+@media (min-width: 768px) {
+
+    /* 태블릿 */
+    .header-wrap .header {
+        height: 8rem;
+        padding: 0 3rem;
+    }
+
+    .header-wrap::after {
+        display: block;
+        content: '';
+        width: 0;
+        height: 100vh;
+        background: #000;
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity ease-out .3s .5s, width ease-out 0s .4s;
+    }
+
+    .open.header-wrap::after {
+        width: 100%;
+        opacity: .6;
+        z-index: 0;
+    }
+
+    .language {
+        height: 8rem;
+    }
+
+    .res-nav-wrap {
+        width: 38rem;
+        padding: 0 3rem;
+        left: auto;
+        right: -38rem;
+    }
+
+    .open .res-nav-wrap {
+        left: auto;
+        right: 0;
+    }
+
+    .open .res-nav-wrap .depth1-list .depth1-menu button::before {
+        left: -6rem;
+    }
+
+    .open .res-nav-wrap .depth1-list .open.depth1-menu button::before {
+        left: -3.9rem;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    /* Laptop */
+    .header-wrap .menu-button,
+    .res-nav-wrap,
+    .depth1-list .depth1-menu button i::after {
+        display: none;
+    }
+
+    .header-wrap::after {
+        width: 100%;
+        height: 0;
+        background: #fff;
+        z-index: -1;
+        opacity: 0;
+        transition: ease .4s;
+    }
+
+    .header-wrap .header {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        height: 9.6rem;
+        margin: 0 auto;
+        padding: 0 4rem;
+        z-index: 100;
+    }
+
+    .header-wrap .logo {
+        width: 140px;
+        height: 3.8rem;
+    }
+
+    .header-wrap .logo svg {
+        width: 100%;
+    }
+
+    .res-nav-wrap {
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+    }
+
+    .header .language {
+        display: block;
+        width: 140px;
+        height: auto;
+    }
+
+    .language a {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 3.6rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: .25px;
+        color: #fff;
+        overflow: hidden;
+        border: 1px solid #fff;
+        transition: ease .3s;
+    }
+
+    .language a::after {
+        display: block;
+        content: '';
+        width: 0%;
+        height: 0%;
+        background: rgba(255, 255, 255, .35);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: ease-out .45s;
+    }
+
+    .language a:hover::after {
+        width: 200%;
+        height: 400%;
+    }
+
+    .language a i {
+        background: transparent;
+        width: 1.1rem;
+        height: .9rem;
+        margin-left: .4rem;
+    }
+
+    .language a i svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-wrap {
+        display: block;
+    }
+
+    .depth1-list {
+        display: flex;
+    }
+
+    .depth1-menu {
+        width: 10rem;
+        text-align: center;
+        transition: ease .4s;
+        padding: 2rem 0;
+    }
+
+    .depth1-menu a {
+        display: block;
+        width: 100%;
+        font-size: 2rem;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .depth1-menu:hover>a,
+    .open .depth1-menu:hover>a {
+        color: #0064d5;
+        font-weight: 600;
+    }
+
+    .depth1-menu a .docker {
+        display: block;
+        content: '';
+        width: 1.1rem;
+        height: 1.1rem;
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        left: 50%;
+        bottom: -4.1rem;
+        transform: translateX(-50%);
+    }
+
+    .depth1-menu a .docker::after {
+        display: block;
+        content: '';
+        width: 0%;
+        height: 0%;
+        background: #0064d5;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: ease .4s;
+    }
+
+    .depth1-menu:hover a .docker::after {
+        width: 180%;
+        height: 180%;
+    }
+
+    .logo svg {
+        transition: ease .3s;
+    }
+
+    .res-logo {
+        display: block;
+        transform: translateY(-100%);
+        margin-top: -2px;
+        opacity: 0;
+        transition: ease .3s;
+    }
+
+    .depth2-list {
+        width: 100%;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        overflow: hidden;
+        opacity: 0;
+        transition: ease .3s;
+    }
+
+    .depth2-list ul {
+        max-height: none;
+        height: 400px;
+        padding: 12rem 0 6rem;
+        transform: translate(0);
+    }
+
+    .depth2-list .depth2-menu {
+        margin-bottom: .8rem;
+    }
+
+    .depth2-list .depth2-menu a {
+        width: fit-content;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin: 0 auto;
+    }
+
+    .depth2-list .depth2-menu a:hover {
+        font-weight: 600;
+    }
+
+    .depth2-list .depth2-menu a::after {
+        display: block;
+        content: '';
+        width: 0;
+        height: 1px;
+        background: #333;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        transition: ease .3s;
+    }
+
+    .depth2-list .depth2-menu a:hover::after {
+        width: 100%;
+    }
+
+    .header-wrap::before {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #333;
+        position: absolute;
+        left: 0;
+        top: 9.6rem;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    .open.header-wrap::before {
+        opacity: .2;
+    }
+
+    .open.header-wrap::after {
+        height: 55vh;
+        opacity: 1;
+        transition: all ease .45s;
+    }
+
+    .open .logo svg {
+        opacity: 0;
+    }
+
+    .open svg.res-logo {
+        opacity: 1;
+    }
+
+    .open .language a {
+        background: #282828;
+        border: 1px solid #282828;
+    }
+
+    .open .depth1-menu a {
+        color: #333;
+    }
+
+    .open .depth1-menu {
+        width: 16rem;
+    }
+
+    .open .depth2-list {
+        height: 420px;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1366px) {
+    /* Desktop */
 }

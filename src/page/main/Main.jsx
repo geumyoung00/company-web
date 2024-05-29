@@ -8,43 +8,43 @@ import classes from './Main.module.css'
 import { ReactComponent as Plus } from '../../assets/svg/iconPlus.svg'
 import { ReactComponent as LineArrow } from '../../assets/svg/iconLineArrow.svg'
 import { NAV_ITEMS } from '../../components/constants'
+
 gsap.registerPlugin(ScrollTrigger)
 
 export const Main = () => {
-  const viewPort = { isMobile: '(min-width:320px)', isPort: '(min-width: 768px)', isDesktop: '(min-width: 1366px)' }
+  const viewPort = { isMobile: '(min-width:320px)', isIpad: '(min-width: 768px)', isDesktop: '(min-width: 1280px)' }
   let businessMm = gsap.matchMedia()
+  let sectionMm = gsap.matchMedia()
 
   const businessRef = useRef()
   const sectionRef = useRef([])
-
   useGSAP(() => {
-    gsap.from(sectionRef.current[0], { scale: '1.1', opacity: '0', translateY: '4rem', duration: 1.4 })
-    gsap.from(sectionRef.current[1], { scale: '1.2', opacity: '.7', duration: 1.2 })
-    gsap.from(sectionRef.current[2], { opacity: '0', translateY: '-1rem', duration: 1, delay: 1.5 })
-    gsap.from(
-      '.box p',
-      {
-        scale: 1.4,
-        duration: 2,
+    sectionMm.add(viewPort, context => {
+      let { isIpad, isDesktop } = context.conditions
+      gsap.from(sectionRef.current[4], {
+        translateY: '50%',
         opacity: 0,
         scrollTrigger: {
-          trigger: '.box p',
-          toggleActions: 'resume pause reset pause',
-          start: '-100% 70%',
-          end: '300% 70%',
+          trigger: sectionRef.current[4],
+          start: isDesktop ? '-70% 80%' : isIpad ? '-70% 80%' : '-50% 55%',
+          end: isDesktop ? '10% 60%' : isIpad ? '10% 60%' : '-25% 55%',
           scrub: 2,
         },
-      },
-      { scope: sectionRef.current[3] },
-    )
+      })
+    })
 
-    gsap.from(sectionRef.current[4], {
-      translateY: '50%',
+    gsap.from(sectionRef.current[0], { scale: '1.2', opacity: '0', translateY: '4rem', duration: 1.4 })
+    gsap.from(sectionRef.current[1], { scale: '1.2', opacity: '.7', duration: 1.2 })
+    gsap.from(sectionRef.current[2], { opacity: '0', translateY: '-1rem', duration: 1, delay: 1.5 })
+    gsap.from('.box p', {
+      scale: 1.4,
+      duration: 2,
       opacity: 0,
       scrollTrigger: {
-        trigger: sectionRef.current[4],
-        start: '-50% 55%',
-        end: '-25% 55%',
+        trigger: '.box p',
+        toggleActions: 'resume pause reset pause',
+        start: '-100% 70%',
+        end: '300% 70%',
         scrub: 2,
       },
     })
@@ -74,26 +74,49 @@ export const Main = () => {
           scrollTrigger: { trigger: 'h3', start: 'center 75%', end: 'center 75%', scrub: 2 },
         })
 
+        if (isDesktop) {
+          gsap.from('dl', {
+            opacity: 0,
+            translateY: '50%',
+            scrollTrigger: { trigger: 'dl', scrub: 2, start: 'top-=55% center', end: 'top-=20% center' },
+          })
+        }
+
         isDesktop
-          ? gsap.from('dd', {
-              opacity: 0,
-              duration: 10,
-              scrollTrigger: { trigger: '.topic', markers: true, scrub: 2, start: 'top 70%', end: 'bottom 80%' },
+          ? // min-width: 1366px
+            gsap.to(topics, {
+              xPercent: -100 * (topics.length - 1),
+              ease: 'none',
+              scrollTrigger: {
+                trigger: businessRef.current,
+                pin: true,
+                scrub: 1,
+                snap: {
+                  snapTo: 1 / (topics.length - 1),
+                  duration: 1.5,
+                  delay: 0, // 스냅을 하기 전 0.2초동안 지연
+                  ease: 'power3.out', // 변화속도
+                },
+                start: 'top top',
+                end: `${document.querySelector('dd').offsetWidth / 5}% top`,
+              },
             })
           : isIpad
-          ? topics.forEach(topic => {
+          ? // min-width: 768px
+            topics.forEach(topic => {
               gsap.from(topic, {
                 translateY: '50%',
                 opacity: 0,
                 scrollTrigger: {
                   trigger: topic,
-                  start: '-45% 80%',
-                  end: '10% 65%',
+                  start: '-60% 80%',
+                  end: '20% 80%',
                   scrub: 2,
                 },
               })
             })
           : topics.forEach(topic => {
+              // min-width:320px
               gsap.from(topic, {
                 translateY: '50%',
                 opacity: 0,
@@ -171,17 +194,17 @@ export const Main = () => {
                       <div className={classes.topic}>
                         <h4>{item.kr}</h4>
                         <p>{item.desc}</p>
+                        <Link to={`/business/${item.en}`}>
+                          <span>View more</span>
+                          <div className={classes.icon}>
+                            <LineArrow />
+                          </div>
+                        </Link>
                       </div>
                       <div className={classes['topic-img']}>
                         <img src={require(`../../assets/images/main/img_main_business_${item.id}.png`)} alt="1" />
                       </div>
                     </div>
-                    <Link to={`/business/${item.en}`}>
-                      <span>View more</span>
-                      <div className={classes.icon}>
-                        <LineArrow />
-                      </div>
-                    </Link>
                   </dd>
                 )
               })}
@@ -211,7 +234,6 @@ export const Main = () => {
                   <dd>
                     <a href="/">
                       <h4>복지 문화</h4>
-                      <p></p>
                       <i className={classes['icon-plus']}>
                         <Plus />
                       </i>

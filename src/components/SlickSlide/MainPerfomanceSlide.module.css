@@ -151,6 +151,28 @@
     }
 }
 
+/* 태블릿 세로모드 */
+@media (min-width: 768px) and (orientation: portrait) {
+    .carousel .inner {
+        width: calc(100% - 3.2rem);
+        max-width: none;
+    }
+
+    .carousel .item {
+        height: 60vh;
+        max-height: none;
+    }
+}
+
+/* 태블릿 가로모드 */
+@media (min-width: 1024px) and (orientation: landscape) {
+    .carousel .inner {
+        width: calc(100% - 3.2rem);
+        max-width: none;
+    }
+
+}
+
 /* 
 .carousel .item:hover .item-text a.more svg {
     animation-name: rolling;

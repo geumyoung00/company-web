@@ -205,21 +205,22 @@
         object-fit: cover;
     }
 
-    section.business dl dd a {
+    .topic a {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         height: 3.6rem;
+        margin-top: 2rem
     }
 
-    section.business dl dd a span {
+    .topic a span {
         font-size: 1.6rem;
         font-weight: 700;
     }
 
-    section.business dl dd a .icon {
+    .topic a .icon {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -229,7 +230,7 @@
         border-radius: 50%;
     }
 
-    section.business dl dd a .icon svg {
+    .topic a .icon svg {
         width: 1.6rem;
         height: 1.6rem;
     }
@@ -415,4 +416,351 @@
     section.recruit .right h3 {
         margin-bottom: 2.4rem;
     }
+}
+
+/* 태블릿 세로모드 */
+@media (min-width: 768px) and (orientation: portrait) {
+    .main section .inner {
+        padding: 0 3rem
+    }
+
+    section.business {
+        overflow: initial;
+    }
+
+    section.business h3 {
+        font-size: 7rem;
+    }
+
+    section.business dl {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    section.business dl dd {
+        width: calc(50% - 1.5rem);
+        margin: 0;
+    }
+
+    section.business dl dd:nth-child(even) {
+        margin-top: 17%;
+    }
+
+    section.business dl dd:nth-child(odd) {
+        margin-top: -8%;
+    }
+
+    section.business dl dd:nth-child(1) {
+        margin-top: 0;
+    }
+
+    section.recruit .inner {
+        padding: 0;
+    }
+
+    section.recruit .left,
+    section.recruit .right {
+        padding: 4rem 3rem;
+    }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+    section.major {
+        height: auto;
+        margin: 16rem 0;
+    }
+
+    .main-bg {
+        height: 45vh;
+    }
+}
+
+/* 태블릿 가로모드 */
+@media (min-width: 1024px) and (orientation: landscape) {
+    .main section .inner {
+        padding: 0 3rem;
+    }
+
+    section.business {
+        overflow: initial;
+        margin: 4rem 0;
+    }
+
+    section.business h3 {
+        font-size: 7.2rem;
+        transform: translateX(-3.5rem);
+    }
+
+    section.business dl {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    section.business dl dd {
+        width: calc(50% - 1.5rem);
+        margin: 0;
+    }
+
+    section.business dl dd:nth-child(even) {
+        margin-top: 18%;
+    }
+
+    section.business dl dd:nth-child(odd) {
+        margin-top: -9%;
+    }
+
+    section.business dl dd:nth-child(1) {
+        margin-top: 0;
+    }
+
+    section.recruit {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    section.recruit .inner .box {
+        flex-flow: row wrap;
+    }
+
+    section.recruit .left,
+    section.recruit .right {
+        padding: 5rem 4rem;
+    }
+
+    section.recruit .left h3,
+    section.recruit .right h3 {
+        font-size: 3.2rem;
+        margin-bottom: 2.4rem
+    }
+
+    section.recruit .left h4,
+    section.recruit .right h4 {
+        font-size: 2.2rem;
+    }
+
+    section.recruit .left {
+        width: calc(50% - 4rem);
+    }
+
+    section.recruit .left dl {
+        display: block;
+    }
+
+    section.recruit .left dl dt {
+        margin-bottom: 4rem;
+    }
+
+    section.recruit .left dl dd {
+        width: 100%;
+        margin-bottom: 2.4rem;
+    }
+
+    section.recruit .left dl dd a {
+        height: 5.6rem;
+        width: 50%;
+        padding-bottom: .8rem;
+    }
+
+    section.recruit .left dl dd a::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    section.recruit .box .left .icon-plus {
+        border: none;
+    }
+
+    section.recruit .box .left .icon-plus svg {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    section.recruit .left p {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    section.recruit .right {
+        width: calc(50% + 4rem);
+        background: rgba(255, 255, 255, .7);
+    }
+
+    section.recruit .right h4 {
+        font-weight: 700;
+    }
+
+    section.recruit .right dl dd a {
+        padding: 2rem;
+        background: transparent;
+    }
+
+    section.recruit .right dl dd a p {
+        font-size: 1.6rem;
+        margin-top: 1.2rem;
+    }
+
+    .main-bg {
+        height: 92vh;
+        bottom: 16rem;
+    }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+
+    /* ipad pro 12.9' Landscape */
+    section.main-vs .inner h2 {
+        font-size: 5.2rem;
+    }
+
+    .mouse-icon span {
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    section.text-section strong {
+        font-size: 2.2rem;
+    }
+
+    section.text-section p {
+        font-size: 3.2rem;
+        margin-bottom: 2.8rem
+    }
+
+    section.business {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    section.business .inner {
+        width: 100vw;
+        padding: 0;
+    }
+
+    section.business h3 {
+        font-size: 9.6rem;
+        transform: translateX(-1rem);
+    }
+
+    section.business dl {
+        display: flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+        width: 500vw;
+        height: 56vh;
+    }
+
+    section.business dl dd {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+        width: 100vw;
+        padding: 0 4rem;
+    }
+
+    section.business dl dd:nth-child(even),
+    section.business dl dd:nth-child(odd) {
+        margin-top: 0;
+    }
+
+    .topic-box {
+        grid-column: 2/12;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 3rem;
+        height: 100%;
+    }
+
+    .topic-box .docker {
+        display: block;
+        font-size: 15rem;
+        font-weight: 800;
+        opacity: 0.1;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-125%);
+    }
+
+    .topic-box .topic {
+        max-width: 320px;
+        margin-left: 6rem;
+    }
+
+    .topic-box .topic h4 {
+        font-size: 4.8rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+    }
+
+    .topic-box .topic p {
+        white-space: wrap;
+        font-size: 2.4rem;
+        line-height: 1.4;
+        word-break: keep-all;
+        font-weight: 400;
+    }
+
+    .topic-box .topic-img {
+        width: 60%;
+    }
+
+    .topic a {
+        justify-content: space-between;
+        width: 80%;
+        height: auto;
+        margin-top: 4.8rem;
+    }
+
+    .topic a span {
+        font-size: 2rem;
+    }
+
+    .topic a .icon {
+        width: 4.2rem;
+        height: 4.2rem;
+    }
+
+    section.major {
+        height: 100vh;
+    }
+
+    section.recruit {
+        height: 70vh;
+        padding-bottom: 16rem;
+    }
+
+    .main section.recruit .inner {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .main section.recruit .box {
+        grid-column: 2/12;
+        margin-bottom: 8rem;
+    }
+}
+
+
+@media (min-width: 1366px) {
+    /* Laptop */
+}
+
+@media (min-width: 1440px) {
+    /* Desktop */
 }
