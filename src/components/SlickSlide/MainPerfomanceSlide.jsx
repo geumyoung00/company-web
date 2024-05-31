@@ -32,14 +32,12 @@ function SampleNextArrow(props) {
 
 const Responsive = () => {
   var settings = {
-    swipe: false,
-    touchMove: false,
-    infinite: true,
-    slidesToShow: 4,
+    swipe: true,
+    infinite: false,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: false,
-    autoplaySpeed: 4000,
     arrows: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -77,16 +75,16 @@ const Responsive = () => {
         },
       },
       {
-        breakpoint: 1400,
+        breakpoint: 1280,
         settings: {
           swipe: true,
           touchMove: true,
           infinite: true,
           slidesToShow: 3,
           slidesToScroll: 1,
-          pauseOnHover: false,
+          pauseOnHover: true,
           autoplay: true,
-          autoplaySpeed: 4000,
+          autoplaySpeed: 3000,
           arrows: true,
           nextArrow: <SampleNextArrow />,
           prevArrow: <SamplePrevArrow />,

@@ -22,6 +22,18 @@
         overflow: hidden;
     }
 
+    .carousel .inner::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 188px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 12, 53, 0.34);
+        backdrop-filter: blur(1.6px);
+    }
+
     .carousel .item-text {
         display: block;
         width: 100%;
@@ -59,19 +71,6 @@
         font-weight: 500;
         margin-top: 1rem;
         position: static;
-    }
-
-    .carousel .item-text a.more::after {
-        display: block;
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background: rgba(0, 12, 53, 0.34);
-        backdrop-filter: blur(1.6px);
-        z-index: -1;
     }
 
     .carousel .item-text a.more .icon {
@@ -173,38 +172,85 @@
 
 }
 
-/* 
-.carousel .item:hover .item-text a.more svg {
-    animation-name: rolling;
-    animation-duration: .4s;
-    animation-delay: .2s;
-    animation-iteration-count: 2;
+@media (min-width: 1280px) {
+    .carousel-arrow {
+        top: -8.3rem;
+    }
+
+    .carousel .item {
+        height: 56vh;
+    }
+
+    .carousel .inner {
+        width: calc(100% - 4rem);
+    }
+
+    .carousel .inner::after {
+        height: 100%;
+        opacity: .4;
+        background: rgba(0, 12, 53, 0.4);
+        backdrop-filter: blur(0px);
+        transition: ease .3s;
+    }
+
+    .carousel .inner:hover::after {
+        opacity: 1;
+        backdrop-filter: blur(1.6px);
+    }
+
+    .carousel .item-text {
+        padding: 3.6rem;
+    }
+
+    .carousel .item-text h4 {
+        font-size: 3.2rem;
+        font-weight: 600;
+    }
+
+    .carousel .item-text p {
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-right: 2.4rem;
+    }
+
+    .carousel .item-text a.more {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        margin-top: 3.2rem;
+    }
+
+    .carousel .item-text a.more .icon {
+        margin-right: 2.4rem;
+    }
+
+    .carousel .item:hover .item-text a.more .icon {
+        animation-name: moreBounce;
+        animation-duration: .3s;
+        animation-iteration-count: 2;
+    }
+
+    @keyframes moreBounce {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(6px);
+        }
+    }
+
+    @-webkit-keyframes moreBounce {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(6px);
+        }
+    }
+
 }
-
-@keyframes rolling {
-    0% {
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateX(50%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-} */
-
-
-/* 
-.carousel .item-text a.more::after {
-    display: block;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 100, 213, 1) 100%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-} */

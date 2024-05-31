@@ -18,21 +18,8 @@ export const Main = () => {
 
   const businessRef = useRef()
   const sectionRef = useRef([])
-  useGSAP(() => {
-    sectionMm.add(viewPort, context => {
-      let { isIpad, isDesktop } = context.conditions
-      gsap.from(sectionRef.current[4], {
-        translateY: '50%',
-        opacity: 0,
-        scrollTrigger: {
-          trigger: sectionRef.current[4],
-          start: isDesktop ? '-70% 80%' : isIpad ? '-70% 80%' : '-50% 55%',
-          end: isDesktop ? '10% 60%' : isIpad ? '10% 60%' : '-25% 55%',
-          scrub: 2,
-        },
-      })
-    })
 
+  useGSAP(() => {
     gsap.from(sectionRef.current[0], { scale: '1.2', opacity: '0', translateY: '4rem', duration: 1.4 })
     gsap.from(sectionRef.current[1], { scale: '1.2', opacity: '.7', duration: 1.2 })
     gsap.from(sectionRef.current[2], { opacity: '0', translateY: '-1rem', duration: 1, delay: 1.5 })
@@ -48,17 +35,6 @@ export const Main = () => {
         scrub: 2,
       },
     })
-
-    gsap.from(sectionRef.current[5], {
-      opacity: 0,
-      translateY: '50%',
-      scrollTrigger: {
-        trigger: sectionRef.current[5],
-        start: '-50% 85%',
-        end: '0% 85%',
-        scrub: 2,
-      },
-    })
   })
 
   useGSAP(
@@ -70,68 +46,94 @@ export const Main = () => {
         gsap.from('h3', {
           translateX: '-100%',
           opacity: 0,
-          duration: 2,
-          scrollTrigger: { trigger: 'h3', start: 'center 75%', end: 'center 75%', scrub: 2 },
+          scrollTrigger: {
+            trigger: 'h3',
+            start: isIpad ? 'top bottom' : 'top center',
+            end: isIpad ? 'center bottom' : 'center+=30% center',
+            scrub: 2,
+          },
         })
 
         if (isDesktop) {
+          // min-width: 1280px
           gsap.from('dl', {
             opacity: 0,
-            translateY: '50%',
-            scrollTrigger: { trigger: 'dl', scrub: 2, start: 'top-=55% center', end: 'top-=20% center' },
+            translateX: '30%',
+            scrollTrigger: { trigger: 'dl', scrub: 2, start: '0 center', end: 'top+=20% center' },
           })
-        }
 
-        isDesktop
-          ? // min-width: 1366px
-            gsap.to(topics, {
-              xPercent: -100 * (topics.length - 1),
-              ease: 'none',
+          gsap.to(topics, {
+            xPercent: -100 * (topics.length - 1),
+            ease: 'none',
+            scrollTrigger: {
+              trigger: businessRef.current,
+              end: `${document.querySelector('dl').offsetWidth} bottom`,
+              pin: true,
+              scrub: 1,
+              snap: 1 / (topics.length - 1),
+            },
+          })
+        } else if (isIpad) {
+          // min-width: 768px
+          topics.forEach(topic => {
+            gsap.from(topic, {
+              translateY: '50%',
+              opacity: 0,
               scrollTrigger: {
-                trigger: businessRef.current,
-                pin: true,
-                scrub: 1,
-                snap: {
-                  snapTo: 1 / (topics.length - 1),
-                  duration: 1.5,
-                  delay: 0, // 스냅을 하기 전 0.2초동안 지연
-                  ease: 'power3.out', // 변화속도
-                },
-                start: 'top top',
-                end: `${document.querySelector('dd').offsetWidth / 5}% top`,
+                trigger: topic,
+                start: '-60% center',
+                end: '20% center',
+                scrub: 2,
               },
             })
-          : isIpad
-          ? // min-width: 768px
-            topics.forEach(topic => {
-              gsap.from(topic, {
-                translateY: '50%',
-                opacity: 0,
-                scrollTrigger: {
-                  trigger: topic,
-                  start: '-60% 80%',
-                  end: '20% 80%',
-                  scrub: 2,
-                },
-              })
+          })
+        } else {
+          topics.forEach(topic => {
+            // min-width:320px
+            gsap.from(topic, {
+              translateY: '50%',
+              opacity: 0,
+              scrollTrigger: {
+                trigger: topic,
+                start: '-5% 75%',
+                end: 'center 70%',
+                scrub: 2,
+              },
             })
-          : topics.forEach(topic => {
-              // min-width:320px
-              gsap.from(topic, {
-                translateY: '50%',
-                opacity: 0,
-                scrollTrigger: {
-                  trigger: topic,
-                  start: '-45% 80%',
-                  end: '10% 65%',
-                  scrub: 2,
-                },
-              })
-            })
+          })
+        }
       })
     },
     { scope: businessRef },
   )
+
+  useGSAP(() => {
+    sectionMm.add(viewPort, context => {
+      let { isIpad, isDesktop } = context.conditions
+      gsap.from(sectionRef.current[4], {
+        translateY: '40%',
+        opacity: 0,
+        scrollTrigger: {
+          trigger: sectionRef.current[4],
+          start: isDesktop ? 'top-=35% center' : isIpad ? '-40% center' : '-50% center',
+          end: isDesktop ? 'top center' : isIpad ? '16% center' : '20% center',
+          scrub: 2,
+          markers: true,
+        },
+      })
+
+      gsap.from(sectionRef.current[5], {
+        opacity: 0,
+        translateY: '20%',
+        scrollTrigger: {
+          trigger: sectionRef.current[5],
+          start: isDesktop ? 'top-=50% center' : 'top-=20% center+=10%',
+          end: isDesktop ? 'top center' : 'top+=20% center+=10%',
+          scrub: 2,
+        },
+      })
+    })
+  })
 
   return (
     <>
@@ -179,32 +181,28 @@ export const Main = () => {
           </div>
         </section>
         <section ref={businessRef} className={`${classes.business}`}>
-          <div className={classes.inner}>
+          <div className={`${classes.inner}`}>
             <h3>BUSINESS</h3>
-            <hr />
-            <dl className={classes.topics}>
+            <dl className={`${classes.topics} pin`}>
               {NAV_ITEMS[1].dropdownItems.map(item => {
                 return (
                   <dd key={item.id}>
-                    <div className={`${classes['topic-box']}`}>
-                      <div className={classes.docker}>
-                        <p>{item.id}</p>
-                        <i />
-                      </div>
-                      <div className={classes.topic}>
-                        <h4>{item.kr}</h4>
-                        <p>{item.desc}</p>
-                        <Link to={`/business/${item.en}`}>
-                          <span>View more</span>
-                          <div className={classes.icon}>
-                            <LineArrow />
-                          </div>
-                        </Link>
-                      </div>
-                      <div className={classes['topic-img']}>
+                    <Link className={classes.topic} to={`/business/${item.en}`}>
+                      <div className={classes.image}>
                         <img src={require(`../../assets/images/main/img_main_business_${item.id}.png`)} alt="1" />
                       </div>
-                    </div>
+                      <div className={classes.text}>
+                        <p className={classes.number}>{item.id}</p>
+                        <h4 className={classes.name}>{item.kr}</h4>
+                        <p className={classes.desc}>{item.desc}</p>
+                        <div className={classes.view}>
+                          <span>View more</span>
+                          <i className={classes.icon}>
+                            <LineArrow />
+                          </i>
+                        </div>
+                      </div>
+                    </Link>
                   </dd>
                 )
               })}

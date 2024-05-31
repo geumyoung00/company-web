@@ -14,6 +14,12 @@ html {
   margin: 0;
 }
 
+body {
+  @supports (-webkit-touch-callout: none) {
+    min-height: -webkit-fill-available;
+  }
+}
+
 a,
 p,
 span {

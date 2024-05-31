@@ -432,16 +432,16 @@
         width: 10rem;
         text-align: center;
         transition: ease .4s;
-        padding: 2rem 0;
     }
 
-    .depth1-menu a {
+    .depth1-menu>a {
         display: block;
         width: 100%;
         font-size: 2rem;
         color: #fff;
         text-align: center;
         cursor: pointer;
+        padding: 2rem 0;
     }
 
     .depth1-menu:hover>a,
@@ -459,7 +459,7 @@
         overflow: hidden;
         position: absolute;
         left: 50%;
-        bottom: -4.1rem;
+        bottom: -2.2rem;
         transform: translateX(-50%);
     }
 
