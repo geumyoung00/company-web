@@ -39,7 +39,7 @@ export const Toggle = ({ children, isActive, isOnSubTop, selectedText }) => {
       ref={ref}
       className={`${classes.toggle} ${
         isOpen === 'open' ? classes.open : isOpen === 'closed' ? classes.closed : classes.initial
-      } ${isActive ? classes.active : ''} ${isOnSubTop ? classes['nav-depth'] : null}`}
+      } ${isActive ? classes.active : ''}`}
     >
       <button onClick={onClickToggle}>
         {selectedText}

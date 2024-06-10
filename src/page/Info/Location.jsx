@@ -6,7 +6,7 @@ export const Location = () => {
     <div className={`${classes['contents-wrap']} ${style.location}`}>
       <div className={classes.inner}>
         <section>
-          <h3 className={classes['section-title']}>location</h3>
+          <h3 className={`${classes['section-title']} ${style['title']}`}>location</h3>
           <div className={style.wrap}>
             <div className={style.map}></div>
             <div className={style['info-box']}>
