@@ -100,3 +100,9 @@ button {
 #root {
   overflow: hidden;
 }
+
+ul,
+ol,
+li {
+  list-style: none;
+}

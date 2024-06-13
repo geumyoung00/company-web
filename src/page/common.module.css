@@ -7,7 +7,7 @@
         display: block;
         width: calc(100% - 4rem);
         margin: 8rem auto 0;
-        padding-bottom: 36rem;
+        padding-bottom: 28rem;
     }
 
     .inner section.grid {
@@ -29,7 +29,7 @@
     }
 
     .inner section .section-title span {
-        font-size: 2.2rem;
+        font-size: inherit;
         font-weight: 300;
         text-transform: capitalize;
     }
@@ -38,11 +38,17 @@
 @media (min-width: 768px) {
     .inner {
         width: calc(100% - 6rem);
-        padding-bottom: 38rem;
+        padding-bottom: 20rem;
     }
 }
 
 /* 태블릿 세로모드 */
+@media (min-width: 820px) and (orientation: portrait) {
+    .inner {
+        width: calc(100% - 6rem);
+    }
+}
+
 @media (min-width: 1024px) and (orientation: portrait) {
     .inner section.grid {
         display: grid;
@@ -53,19 +59,9 @@
     }
 }
 
-@media (min-width: 820px) and (orientation: portrait) {
-    .inner {
-        width: calc(100% - 6rem);
-        padding-bottom: 38rem;
-    }
-}
 
 /* 태블릿 가로모드 */
 @media (min-width: 1024px) and (orientation: landscape) {
-    .inner {
-        padding-bottom: 32rem;
-    }
-
     .inner section.grid {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -83,9 +79,8 @@
     .inner {
         display: block;
         width: 73.33%;
-        min-width: 1180px;
+        min-width: 1200px;
         margin: 12rem auto 0;
-        padding-bottom: 38rem;
     }
 
     .inner section.grid {

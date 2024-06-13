@@ -53,6 +53,7 @@
 
     .info dl dd:first-child {
         margin-bottom: .8rem;
+        width: 100%;
     }
 
     .info dl dd:last-child {
@@ -67,12 +68,16 @@
 
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .inner {
         display: flex;
         height: 16rem;
         width: 100%;
         padding: 0 3rem;
+    }
+
+    .info dl dd br {
+        display: none;
     }
 }
 

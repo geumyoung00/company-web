@@ -1,3 +1,11 @@
+.location .map {
+    background-image: url(../../assets/images/sub/info/img_location.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid #ddd;
+}
+
 @media (min-width: 320px) {
     .greeting section {
         position: relative;
@@ -298,8 +306,6 @@
     .location .map {
         min-height: 26rem;
         width: 100%;
-        background: goldenrod;
-        border: 1px solid #ddd;
     }
 
     .location .info-box {
@@ -599,26 +605,75 @@
     }
 }
 
-@media (min-width: 1024px) and (orientation: portrait) {
+@media (min-width: 1024px) {
 
     .location .wrap {
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 3rem;
+        min-height: 420px;
     }
 
     .location .map {
-        position: static;
-        min-height: 420px;
+        grid-column: 1/7;
+        min-height: 0;
         width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        position: absolute;
+        top: 0;
+    }
+
+    .location .info-box {
+        width: calc(100% + 3rem);
+        grid-column: 7/13;
+        padding: 4rem;
+        transform: translateX(-3rem);
+    }
+
+    .location .info-box p {
+        font-size: 2.8rem;
+    }
+
+    .location .info-box p::after {
+        display: block;
+        content: '';
+        width: 4rem;
+        height: 1px;
+        background: #fff;
+        transform: translateY(4rem);
+        opacity: .8;
+    }
+
+    .location .info-box dl {
+        margin-bottom: 2rem;
+    }
+
+    .location .info-box dl * {
+        font-size: 2rem;
+        font-weight: 300;
     }
 
     .location .info-box dl dt {
-        width: 8rem;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0rem;
     }
 
-    .location .info-box dl dd+dd {
-        margin-left: 8rem;
+    .location .info-box dl dd {
+        font-size: 1.8rem;
+        line-height: 1.4;
     }
 
+    .location .info-box dl dd * {
+        font-size: 1.8rem;
+    }
+
+    .location .info-box dl dd strong {
+        display: inline-block;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
 }
 
 /* 테블릿 가로모드 */
@@ -755,74 +810,6 @@
     .history .box:nth-child(even) .year:nth-child(5).active dt::before {
         height: 17.8rem;
     }
-
-    .location .wrap {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-column-gap: 3rem;
-    }
-
-    .location .map {
-        grid-column: 1/7;
-        min-height: 0;
-        width: 100%;
-        height: 100%;
-        background: goldenrod;
-        border: 1px solid #ddd;
-        position: absolute;
-        top: 0;
-    }
-
-    .location .info-box {
-        width: calc(100% + 3rem);
-        grid-column: 7/13;
-        padding: 4rem;
-        transform: translateX(-3rem);
-    }
-
-    .location .info-box p {
-        font-size: 2.8rem;
-    }
-
-    .location .info-box p::after {
-        display: block;
-        content: '';
-        width: 4rem;
-        height: 1px;
-        background: #fff;
-        transform: translateY(4rem);
-        opacity: .8;
-    }
-
-    .location .info-box dl {
-        margin-bottom: 2rem;
-    }
-
-    .location .info-box dl * {
-        font-size: 2rem;
-        font-weight: 300;
-    }
-
-    .location .info-box dl dt {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 0rem;
-    }
-
-    .location .info-box dl dd {
-        font-size: 1.8rem;
-        line-height: 1.4;
-    }
-
-    .location .info-box dl dd * {
-        font-size: 1.8rem;
-    }
-
-    .location .info-box dl dd strong {
-        display: inline-block;
-        font-weight: 500;
-        margin-bottom: 0;
-    }
 }
 
 @media (min-width: 1280px) {
@@ -898,11 +885,25 @@
         grid-template-columns: repeat(12, 1fr);
         grid-column-gap: 4rem;
         margin: 2rem 0;
+        min-height: 480px;
     }
 
     .location .info-box {
         transform: translateX(-4rem);
         width: calc(100% + 4rem);
+        padding: 6rem;
+    }
 
+    .location .info-box dl * {
+        line-height: 1.4;
+    }
+
+    .location .info-box dl dd {
+        font-size: 2rem;
+    }
+
+    .location .info-box dl dd strong,
+    .location .info-box dl dd span {
+        font-size: inherit;
     }
 }

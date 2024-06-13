@@ -44,18 +44,20 @@ export const PerformDetail = () => {
   }
 
   return (
-    <div className={`${classes['contents-wrap']} ${style.performance}  ${style['all-perform']}`}>
-      <div className={classes.inner}>
+    <div className={`${classes['contents-wrap']} ${style['perform-detail']}`}>
+      <div className={`${classes.inner} ${style['inner-wrap']}`}>
         <section>
           <h3 className={'hide'}>실적 상세 정보</h3>
           {path === 'all' ? <BoardTab /> : ''}
           <div className={style['detail-contents']}>
-            <div className={style.img}></div>
+            <p className={style.title}>
+              {item.title}
+              <span>{item.period}</span>
+            </p>
+            <div className={style.img}>
+              <img />
+            </div>
             <div className={style.contents}>
-              <p className={style.title}>
-                {item.title}
-                <span>{item.period}</span>
-              </p>
               <div className={style.table}>
                 <dl>
                   <dt>사업부문</dt>
