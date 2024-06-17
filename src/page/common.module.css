@@ -81,6 +81,7 @@
         width: 73.33%;
         min-width: 1200px;
         margin: 12rem auto 0;
+        padding-bottom: 28rem
     }
 
     .inner section.grid {
