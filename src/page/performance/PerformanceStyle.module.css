@@ -262,4 +262,16 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 3rem;
     }
+
+    .detail-contents .img {
+        grid-column: 1/6;
+        width: calc(100% + 4rem);
+    }
+
+    .detail-contents .title,
+    .detail-contents .contents {
+        grid-column: 6/13;
+        width: calc(100% - 4rem);
+        transform: translateX(4rem);
+    }
 }
