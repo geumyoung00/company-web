@@ -1,26 +1,65 @@
-.nav {
-    display: flex;
-    height: 56vh;
-    padding-top: 11rem;
-    background-position: top center;
-    background-size: cover;
-    color: #fff;
+@media (min-width: 320px) {
+    .nav {
+        display: flex;
+        height: 50vh;
+        padding-top: 6.8rem;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+    .inner {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .inner h2 {
+        font-size: 3.8rem;
+        font-weight: 700;
+        margin: auto auto;
+        color: #fff;
+    }
 }
 
-.inner {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    width: 74vw;
-    height: 100%;
-    margin: 0 auto;
+@media (min-width: 390px) {
+    .nav {
+        height: 44vh;
+    }
 }
 
-.inner h2 {
-    font-size: 6rem;
-    font-weight: 700;
-    margin: auto auto;
-    color: #fff;
-    ;
+
+/* 태블릿 세로모드 */
+@media (min-width: 768px) and (orientation: portrait) {
+    .nav {
+        height: 34vh;
+    }
+}
+
+@media (min-width: 1280px) {
+    .nav {
+        height: 56vh;
+        padding-top: 11rem;
+        color: #fff;
+    }
+
+    .inner {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        width: 73.33%;
+        min-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .inner h2 {
+        font-size: 6rem;
+        font-weight: 700;
+    }
 }

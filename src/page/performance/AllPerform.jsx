@@ -21,7 +21,7 @@ export const AllPerform = () => {
 
   return (
     <div className={`${classes['contents-wrap']} ${style.performance}  ${style['all-perform']}`}>
-      <div className={classes.inner}>
+      <div className={`${classes.inner} ${style['inner-wrap']}`}>
         <section>
           <h3 className={'hide'}>주요실적</h3>
           <BoardTab />

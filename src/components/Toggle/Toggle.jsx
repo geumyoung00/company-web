@@ -14,6 +14,7 @@ export const Toggle = ({ children, isActive, isOnSubTop, selectedText }) => {
     setIsOpen(prev => (prev === 'open' ? 'closed' : 'open'))
     // setIsOpen('open')
   }
+
   useEffect(() => {
     function listener(e) {
       //모달 안을 클릭 했는지
@@ -38,7 +39,7 @@ export const Toggle = ({ children, isActive, isOnSubTop, selectedText }) => {
       ref={ref}
       className={`${classes.toggle} ${
         isOpen === 'open' ? classes.open : isOpen === 'closed' ? classes.closed : classes.initial
-      } ${isActive ? classes.active : ''} ${isOnSubTop ? classes['nav-depth'] : null}`}
+      } ${isActive ? classes.active : ''}`}
     >
       <button onClick={onClickToggle}>
         {selectedText}

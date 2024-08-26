@@ -25,7 +25,7 @@ const BoardTab = () => {
   }
 
   return (
-    <div className={classes['tabs']}>
+    <div className={`${classes['tabs']}`}>
       <div className={classes.inner}>
         {navItems.map(item => {
           return (

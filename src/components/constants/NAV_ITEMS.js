@@ -1,5 +1,6 @@
 export const NAV_ITEMS = [
   {
+    id: 0,
     en: 'info',
     kr: '회사소개',
     dropdownItems: [
@@ -10,17 +11,19 @@ export const NAV_ITEMS = [
     ],
   },
   {
+    id: 1,
     en: 'business',
     kr: '사업분야',
     dropdownItems: [
       { id: '01', kr: '시스템 개발', en: 'si', desc: '김상현&김형도(투킴) 이끈다' },
-      { id: '02', kr: '해도제작', en: 'chart', desc: '해도는 진짜 모르겠어' },
+      { id: '02', kr: '해도 제작', en: 'chart', desc: '해도는 진짜 모르겠어' },
       { id: '03', kr: '위성 데이터', en: 'satellite', desc: '해양위성영상 알고리즘 연구 및 품질검증' },
       { id: '04', kr: '해양예보방송', en: 'media', desc: '해양예보방송 운영 및 영상물 제작' },
       { id: '05', kr: 'R&D', en: 'rnd', desc: '국가연구개발사업 및 자체 프로젝트 수행' },
     ],
   },
   {
+    id: 2,
     en: 'performance',
     kr: '사업실적',
     dropdownItems: [
@@ -29,6 +32,7 @@ export const NAV_ITEMS = [
     ],
   },
   {
+    id: 3,
     en: 'recruit',
     kr: '인재채용',
     dropdownItems: [

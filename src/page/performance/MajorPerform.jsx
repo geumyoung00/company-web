@@ -8,7 +8,7 @@ export const MajorPerform = () => {
 
   return (
     <div className={`${classes['contents-wrap']} ${style.performance}  ${style['major']}`}>
-      <div className={classes.inner}>
+      <div className={`${classes.inner} ${style['inner-wrap']}`}>
         <section>
           <h3 className="hide">주요실적</h3>
           <div className={style.lists}>
