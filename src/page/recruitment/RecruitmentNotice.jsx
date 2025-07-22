@@ -3,25 +3,28 @@ import style from './Recruitment.module.css'
 import { RECRUIT_ITEMS } from '../../components/constants'
 import BoardTab from '../../components/BoardTab/BoardTab'
 import { ReactComponent as Plus } from '../../assets/svg/iconPlus.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 export const RecruitmentNotice = () => {
   const [filterItems, setFilterItems] = useState(RECRUIT_ITEMS)
+  const params = useParams()
+  const { tab } = params
 
-  const filterItemHandler = tabName => {
-    if (tabName === 'all') {
-      setFilterItems(RECRUIT_ITEMS)
-    } else {
-      setFilterItems(RECRUIT_ITEMS.filter(item => item.en === tabName))
+  useEffect(() => {
+    if (!tab) setFilterItems(RECRUIT_ITEMS)
+    else {
+      const items = RECRUIT_ITEMS.filter(item => item.en === tab)
+      setFilterItems(items)
     }
-  }
+  }, [tab])
 
   return (
     <div className={`${classes['contents-wrap']} ${style.notice} }`}>
       <div className={classes.inner}>
         <section>
           <p className={`${classes['section-title']} ${style['section-title']}`}>Recruitment</p>
-          <BoardTab filterItemHandler={filterItemHandler} />
+          <BoardTab />
           <div className={style.lists}>
             {filterItems.map(item => {
               return (

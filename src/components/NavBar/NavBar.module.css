@@ -1,74 +1,161 @@
-.nav-bar {
-    width: 100%;
-    height: 6.7rem;
-    padding: 0 4rem;
-    transform: translateY(0%);
-    background: #fff;
-    z-index: 10;
+@media (min-width: 320px) {
+    .nav-bar {
+        width: 100%;
+        height: auto;
+        z-index: 10;
+        padding: .8rem 0;
+    }
+
+    .nav-bar dl {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-content: center;
+        width: calc(100% - 4rem);
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .nav-bar dl dd {
+        display: flex;
+        align-items: center;
+        width: calc(50% - 1.8rem);
+        height: 4.8rem;
+    }
+
+    .nav-bar dl dd::after {
+        display: block;
+        content: '';
+        width: 1px;
+        height: 1.8rem;
+        background: rgba(255, 255, 255, .5);
+        position: absolute;
+        right: 0rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-bar dl dd:last-child:after {
+        display: none;
+    }
+
+    .nav-bar dl dd button {
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    .nav-bar .home {
+        width: auto;
+    }
+
+    .nav-bar .home a {
+        display: flex;
+        width: 3.6rem;
+        height: 4rem;
+    }
+
+    .nav-bar .home a svg {
+        display: block;
+        width: 1.8rem;
+        height: 1.6rem;
+        fill: #fff;
+        margin: auto auto;
+        margin-left: 0;
+    }
 }
 
-.nav-bar dl {
-    display: flex;
-    font-size: 1.8rem;
-    height: calc(100% - .5rem);
-    position: relative;
-    bottom: -.5rem;
+@media (min-width: 390px) {
+    .nav-bar {
+        padding: .8rem 0;
+    }
 }
 
-.nav-bar dl dd {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 24.6rem;
-    height: 100%;
-    font-size: 1.8rem;
-    position: relative;
+/* 태블릿 */
+@media (min-width: 768px) {
+    .nav-bar {
+        width: calc(100% - 6rem);
+    }
+
+    .nav-bar dl {
+        width: 100%;
+    }
+
+    .nav-bar dl dd {
+        width: calc(33.33% - 2rem);
+    }
 }
 
-
-.nav-bar dl dd::after {
-    display: block;
-    content: '';
-    width: 1px;
-    height: 1.4em;
-    background: #ddd;
-    position: absolute;
-    right: 0rem;
-    top: 50%;
-    transform: translateY(-50%);
+/* 태블릿 */
+@media (min-width: 1024px) {
+    .nav-bar dl dd {
+        width: calc(25% - 2rem);
+    }
 }
 
-.nav-bar .home {
-    width: 4rem;
-    margin-right: 1rem;
-}
+@media (min-width: 1280px) {
+    .nav-bar {
+        width: 100%;
+        height: 6.4rem;
+        background: #fff;
+        padding: 0 2rem;
+    }
 
-.nav-bar .home a {
-    display: flex;
-    width: 4rem;
-    height: 4rem;
-}
+    .nav-bar dl {
+        display: flex;
+        height: calc(100% - .8rem);
+        margin-top: .8rem;
+    }
 
-.nav-bar .home a svg {
-    width: 2rem;
-    height: 1.8rem;
-    fill: #555;
-    margin: auto auto
-}
+    .nav-bar dl dd {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 24.6rem;
+        height: 100%;
+        font-size: 1.8rem;
+        position: relative;
+    }
 
-.nav-bar dl dd.home::after {
-    right: -1rem;
-}
+    .nav-bar dl dd button {
+        color: #333;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
 
-.nav-bar dl dd>* button,
-.nav-bar dl dd>* a,
-.nav-bar dl dd>a {
-    opacity: .7;
-    transition: ease .2s;
-}
+    .nav-bar dl dd::after {
+        height: 1.8rem;
+        background: rgba(0, 0, 0, 0.2)
+    }
 
-.nav-bar dl dd>*:hover button,
-.nav-bar dl dd>*:hover a,
-.nav-bar dl dd>a:hover {
-    opacity: 1;
+    .nav-bar .home {
+        width: 4.8rem;
+    }
+
+    .nav-bar .home a {
+        display: flex;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .nav-bar .home a svg {
+        width: 2rem;
+        height: 1.8rem;
+        fill: #555;
+        margin: auto auto;
+    }
+
+    .nav-bar dl dd>* button,
+    .nav-bar dl dd>* a,
+    .nav-bar dl dd>a {
+        opacity: .7;
+        transition: ease .2s;
+    }
+
+    .nav-bar dl dd>*:hover>button,
+    .nav-bar dl dd>*:hover>a,
+    .nav-bar dl dd>a:hover {
+        opacity: 1;
+        font-weight: 600;
+    }
 }

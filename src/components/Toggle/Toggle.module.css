@@ -1,163 +1,174 @@
-.toggle {
-    width: 16rem;
-    color: #fff;
-    font-size: 1.6rem;
-    position: relative;
-    z-index: 10;
-}
-
-.toggle button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 11.5rem;
-    height: inherit;
-    padding: 0 1rem;
-    margin: 0 0 0 auto;
-    transition: ease .3s color;
-}
-
-.toggle .toggle-items {
-    width: 11.5rem;
-    margin-top: 1rem;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: calc(100% + 1rem)
-}
-
-.toggle ul {
-    width: 100%;
-    text-align: center;
-    background: #fff;
-    right: 0;
-    padding: .1rem 0;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    z-index: 10;
-}
-
-.toggle ul li {
-    font-size: 1.6rem;
-    line-height: 1;
-    color: #333;
-    margin: 1em 0;
-}
-
-.toggle ul li:hover a {
-    color: #0064d5;
-    font-weight: 600;
-}
-
-.toggle ul li a::after {
-    display: block;
-    content: '';
-    width: 0;
-    height: 1px;
-    background: #0064d5;
-    position: absolute;
-    left: 50%;
-    bottom: -.2rem;
-    transform: translate(-50%, 0);
-    transition: ease .2s;
-}
-
-.toggle ul li:hover a::after {
-    width: 100%;
-}
-
-.toggle button svg {
-    height: 1em;
-    fill: #fff;
-    transform: rotate(0);
-    transition: ease 0.3s all;
-}
-
-@keyframes open-animation {
-    0% {
-        transform: translateY(-200%);
+@media (min-width: 320px) {
+    .toggle {
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        font-size: 1.6rem;
+        position: relative;
+        z-index: 10;
     }
 
-    100% {
-        transform: translateY(0);
+    .toggle button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 0 1.6rem;
+        transition: ease .3s color;
+    }
+
+    .toggle-items {
+        width: calc(100% - 1.6rem);
+        overflow: hidden;
+        position: absolute;
+        right: .8rem;
+        top: 100%;
+        z-index: 0;
+    }
+
+    .toggle ul {
+        width: 100%;
+        background: #fff;
+        right: 0;
+        padding: .6rem 0;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        z-index: 10;
+    }
+
+    .toggle ul li {
+        display: block;
+        height: 3.6rem;
+        font-size: 1.6rem;
+        color: #333;
+    }
+
+    .toggle ul li a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 0 2rem;
+    }
+
+    .toggle button svg {
+        height: .6rem;
+        fill: #fff;
+        transform: rotate(0);
+        transition: ease 0.3s all;
+    }
+
+    @keyframes open-height-animation {
+        0% {
+            transform: translateY(-200%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .toggle.open .toggle-items {
+        animation: open-height-animation 0.1s ease;
+    }
+
+    @keyframes open-animation {
+        0% {
+            transform: translateY(-200%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .toggle.open ul {
+        animation: open-animation 0.5s ease;
+    }
+
+    @keyframes closed-height-animation {
+        0% {
+            transform: translateY(0%);
+        }
+
+        100% {
+            transform: translateY(-200%);
+        }
+    }
+
+    .toggle.closed .toggle-items {
+        animation: closed-height-animation 0.5s 0.5s ease;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes closed-animation {
+        0% {
+            transform: translateY(0%);
+        }
+
+        100% {
+            transform: translateY(-200%);
+        }
+    }
+
+    .toggle.closed ul {
+        animation: closed-animation 0.7s ease;
+        animation-fill-mode: forwards;
+    }
+
+    .toggle.initial ul {
+        top: -200%;
+        position: inherit;
+    }
+
+    .active.toggle button {
+        color: #333;
+        transition: ease .2s color;
+    }
+
+    .active.toggle button svg {
+        fill: #333;
+    }
+
+    .toggle.open button svg {
+        transform: rotate(180deg);
     }
 }
 
-.toggle.open ul {
-    animation: open-animation 0.5s ease;
-}
-
-@keyframes closed-animation {
-    0% {
-        transform: translateY(0%);
+@media (min-width: 1280px) {
+    .toggle button svg {
+        height: .7rem;
+        fill: #333;
     }
 
-    100% {
-        transform: translateY(-200%);
+    .toggle-items {}
+
+    .toggle-items ul li a {
+        width: fit-content;
     }
-}
 
-.toggle.closed ul {
-    animation: closed-animation 0.7s ease;
-    animation-fill-mode: forwards;
-}
+    .toggle-items ul li a::after {
+        display: block;
+        content: '';
+        width: 0;
+        height: 1px;
+        position: absolute;
+        left: 2rem;
+        bottom: 0;
+        background: #0064d5;
+        transition: ease .2s;
+    }
 
-.toggle.initial ul {
-    top: -200%;
-    position: inherit;
-}
+    .toggle-items ul li a:hover {
+        color: #0064d5;
+        font-weight: 600;
+        opacity: 1;
+    }
 
-.active.toggle button {
-    color: #333;
-    transition: ease .2s color;
-}
-
-.active.toggle button svg {
-    fill: #333;
-}
-
-.toggle.open button svg {
-    transform: rotate(180deg);
-}
-
-.toggle.nav-depth {
-    width: 24.6rem;
-    height: 100%;
-    color: #333;
-    font-size: 1.8rem;
-    font-weight: 500;
-}
-
-.toggle.nav-depth button {
-    margin: 0;
-    padding: 0 2rem;
-    width: 100%;
-}
-
-.toggle.nav-depth button svg {
-    fill: #333;
-    width: 1.5rem;
-    height: .8rem;
-}
-
-.toggle.nav-depth .toggle-items {
-    width: calc(100% - 2rem);
-    left: 1rem;
-    margin-top: 0;
-    z-index: 20;
-}
-
-.toggle.nav-depth .toggle-items ul li {
-    font-size: 1.6rem;
-    text-align: left;
-    text-indent: 1.5rem;
-    font-weight: 400;
-}
-
-.toggle.nav-depth .toggle-items ul li:hover a {
-    color: #333;
-}
-
-.toggle.nav-depth .toggle-items ul li a::after {
-    background: #333;
+    .toggle-items ul li a:hover::after {
+        width: calc(100% - 4rem);
+    }
 }

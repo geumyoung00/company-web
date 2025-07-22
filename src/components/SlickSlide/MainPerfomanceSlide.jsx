@@ -3,38 +3,91 @@ import './slick.css'
 import './slick-theme.css'
 import classes from './MainPerfomanceSlide.module.css'
 import { ReactComponent as LineArrow } from '../../assets/svg/iconLineArrow.svg'
+import { ReactComponent as ArrowHead } from '../../assets/svg/iconSelecArrowHead.svg'
+
+function SamplePrevArrow(props) {
+  const { onClick } = props
+  return (
+    <div className={`${classes['carousel-arrow']} ${classes.prev}`} onClick={onClick}>
+      {' '}
+      <i>
+        <span className="hide">이전</span>
+        <ArrowHead />
+      </i>
+    </div>
+  )
+}
+
+function SampleNextArrow(props) {
+  const { onClick } = props
+  return (
+    <div className={`${classes['carousel-arrow']} ${classes.next}`} onClick={onClick}>
+      <i>
+        <span className="hide">다음</span>
+        <ArrowHead />
+      </i>
+    </div>
+  )
+}
 
 const Responsive = () => {
   var settings = {
-    dots: false,
-    arrows: false,
+    swipe: true,
     infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
+    pauseOnHover: false,
+    arrows: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
       {
         breakpoint: 480,
         settings: {
+          swipe: false,
+          touchMove: false,
+          infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay: true,
+          pauseOnHover: false,
+          autoplaySpeed: 4000,
+          arrows: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          swipe: false,
+          touchMove: false,
+          infinite: true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          pauseOnHover: false,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          arrows: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          swipe: true,
+          touchMove: true,
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          pauseOnHover: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          arrows: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
         },
       },
     ],
@@ -49,8 +102,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -64,8 +119,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -79,8 +136,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -94,8 +153,10 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>
@@ -109,8 +170,27 @@ const Responsive = () => {
               <h4>주요실적 프로젝트</h4>
               <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
               <a className={classes.more} href="/">
-                <span>자세히 보기</span>
-                <LineArrow />
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
+              </a>
+            </div>
+            <div className={classes['item-img']}>
+              <img src={require('../../assets/images/main/img_main_swipe_01.png')} alt="주요실적 프로젝트" />
+            </div>
+          </div>
+        </div>
+        <div className={`${classes['item']} ${classes.last}`}>
+          <div className={classes.inner}>
+            <div className={classes['item-text']}>
+              <h4>주요실적 프로젝트</h4>
+              <p>주요실적 프로젝트에 대한 간략한 설명 한 줄</p>
+              <a className={classes.more} href="/">
+                <span>View more</span>
+                <div className={classes.icon}>
+                  <LineArrow />
+                </div>
               </a>
             </div>
             <div className={classes['item-img']}>

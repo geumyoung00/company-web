@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Main from './page/Main'
+import Main from './page/main/Main'
 import MainLayout from './page/roots/MainRoot'
 import SubLayout from './page/roots/SubRoot'
 
@@ -82,16 +82,25 @@ function App() {
           element: <MajorPerform />,
         },
         {
+          path: 'major/detail/:id',
+          element: <PerformDetail />,
+        },
+        {
           path: 'all',
           index: true,
           element: <AllPerform />,
         },
         {
-          path: 'major/:id',
+          path: 'all/:tab',
+          index: true,
+          element: <AllPerform />,
+        },
+        {
+          path: 'all/detail/:id',
           element: <PerformDetail />,
         },
         {
-          path: 'all/:id',
+          path: 'all/:tab/detail/:id',
           element: <PerformDetail />,
         },
       ],
@@ -112,6 +121,11 @@ function App() {
         },
         {
           path: 'recruitNotice',
+          index: true,
+          element: <RecruitmentNotice />,
+        },
+        {
+          path: 'recruitNotice/:tab',
           index: true,
           element: <RecruitmentNotice />,
         },

@@ -17,7 +17,7 @@ export const Welfare = () => {
                 <img src={require('../../assets/images/sub/recruitment/img_welfare01.png')} alt="시차 출퇴근제" />
               </div>
               <h4>시차 출퇴근제</h4>
-              <p>개인스케줄에 맞춰 출근시간 자율적으로 선택 할 수 있습니다.</p>
+              <p>개인스케줄에 맞춰 출근시간 자율적으로 선택</p>
             </div>
             <div className={style.item}>
               <div className={style.img}>
@@ -25,7 +25,7 @@ export const Welfare = () => {
               </div>
               <h4>자기계발비 지원</h4>
               <p>
-                제한없이 자유롭게 사용 가능
+                제한없이 자유롭게 사용 가능&nbsp;
                 <br />
                 (반기당 20만원)
               </p>
@@ -36,7 +36,7 @@ export const Welfare = () => {
               </div>
               <h4>리프레시 휴가</h4>
               <p>
-                자유롭게 사용할 수 있는 휴가 지원
+                자유롭게 사용할 수 있는 휴가 지원&nbsp;
                 <br />
                 (3년 만근 시 15일 지급)
               </p>
@@ -54,9 +54,9 @@ export const Welfare = () => {
               </div>
               <h4>모든 식비 지원</h4>
               <p>
-                점심, 저녁 식대 지원
+                점심 및 저녁 식대 지원&nbsp;
                 <br />
-                (석식은 야근 발생 시)
+                (석식은 야근 발생 시 지원)
               </p>
             </div>
             <div className={style.item}>
@@ -64,7 +64,7 @@ export const Welfare = () => {
                 <img src={require('../../assets/images/sub/recruitment/img_welfare06.png')} alt="야근시 교통비 지원" />
               </div>
               <h4>야근시 교통비 지원</h4>
-              <p>택시비용 또는 법인차량 제공</p>
+              <p>택시 비용 또는 법인 차량 제공</p>
             </div>
             <div className={style.item}>
               <div className={style.img}>
